@@ -10,41 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_31_193613) do
+ActiveRecord::Schema.define(version: 2022_02_01_071506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", force: :cascade do |t|
-    t.text "event_time"
-    t.text "preview"
-    t.text "title"
-    t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.text "title"
-    t.text "preview"
-    t.text "body"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "user_name"
-    t.string "bio"
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: 6
-    t.datetime "remember_created_at", precision: 6
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  add_foreign_key "posts", "users"
 end
