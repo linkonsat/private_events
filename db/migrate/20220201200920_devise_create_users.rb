@@ -2,7 +2,10 @@
 
 class DeviseCreateUsers < ActiveRecord::Migration[7.0]
   def change
+    drop_table("users")
     create_table :users do |t|
+      t.string :user_name 
+      t.string :bio
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
