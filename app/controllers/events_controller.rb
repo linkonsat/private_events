@@ -6,17 +6,21 @@ class EventsController < ApplicationController
     end
 
     def show 
+        @event = Event.where("id = ?", params[:id])
     end
     def create 
-        if @event.save 
-           redirect_to action: show, @post 
-        end
-        
+        @event = Event.new(event_params)
+        @event.save!
+        redirect_to @event
     end
     def index
     end
+
+    def all_events 
+        @event = Event.all
+    end
     private 
-    def post_params
+    def event_params
         params.require(:event).permit(:name, :description, :creator, :event_date, :event_end_date, :user_id)
     end
 end

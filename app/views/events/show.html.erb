@@ -1,0 +1,9 @@
+<% @event.each do |event| %>
+    <% if user_signed_in? %>
+    <%= event.name %>
+    <%= event.description %>
+    <%= event.creator %>
+    <%= event.event_date %>
+    <%= event.event_end_date %>
+<% end %>
+<% end %>

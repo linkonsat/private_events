@@ -1,1 +1,14 @@
-reeee
+<%= form_with model: @event do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+    <%= form.label :creator %>
+    <%= form.text_field :creator %>
+    <%= form.label :event_date %>
+    <%= form.text_field :event_date %>
+    <%= form.label :event_end_date %>
+    <%= form.text_field :event_end_date %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    <%= form.submit %>
+    <% end %>
