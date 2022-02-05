@@ -1,4 +1,4 @@
 you made it!
 <% @event.each do |event| %>
-    <%= event.name %>
+    <%= link_to "#{event.name}", event_path(event) %> 
     <% end %>

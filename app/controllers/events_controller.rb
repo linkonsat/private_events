@@ -6,6 +6,7 @@ class EventsController < ApplicationController
     end
 
     def show 
+        debugger
         @event = Event.where("id = ?", params[:id])
     end
     def create 

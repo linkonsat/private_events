@@ -1,4 +1,5 @@
 class EventAttendeesController < ApplicationController
-  def sign_up
+  def new 
+    @event_attendee = EventAttendee.new
   end
 end
