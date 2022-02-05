@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'event_attendees/sign_up'
   devise_for :users
   resources :user
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
