@@ -13,4 +13,4 @@
     <%= attendee.bio %>
     <%= attendee.email %>
     <% end %> 
-<%= button_to "sign up", new_event_attendee_path, params: { :attendee_id => @event.first.user.id, :event_id => @event.first.id }  %>
+<%= button_to "sign up", new_event_attendee_path, params: { :attendee_id => current_user.id, :event_id => @event.first.id }  %>

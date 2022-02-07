@@ -8,7 +8,7 @@ Past Events
 Future events 
 
 <% @attended_events.all.each do |event| %>
-    <% if event.event.event_end_data > Time.now %>
+    <% if event.event.event_end_date > Time.now %>
+    <%= event.event.event_end_date %>
     <% end %>
     <% end %>
-    

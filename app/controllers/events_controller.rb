@@ -22,6 +22,7 @@ class EventsController < ApplicationController
 
     def attended_events 
         @attended_events = EventAttendee.where("id = ?", current_user[:id])
+        debugger
     end
     private 
     def event_params
