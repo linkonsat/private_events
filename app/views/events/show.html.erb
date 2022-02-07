@@ -5,5 +5,8 @@
     <%= event.creator %>
     <%= event.event_date %>
     <%= event.event_end_date %>
+    
 <% end %>
 <% end %>
+
+<%= button_to "sign up", new_event_attendee_path, params: { :user_id => @event.first.user.id, :event_id => @event.first.id }  %>

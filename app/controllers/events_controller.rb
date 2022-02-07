@@ -6,7 +6,6 @@ class EventsController < ApplicationController
     end
 
     def show 
-        debugger
         @event = Event.where("id = ?", params[:id])
     end
     def create 
@@ -24,4 +23,5 @@ class EventsController < ApplicationController
     def event_params
         params.require(:event).permit(:name, :description, :creator, :event_date, :event_end_date, :user_id)
     end
+
 end
