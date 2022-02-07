@@ -1,0 +1,14 @@
+Past Events
+<% @attended_events.all.each do |event| %>
+    <% if event.event.event_end_date < Time.now %>
+    <%= event.event.event_end_date %>
+    <% end %>
+<% end %>
+
+Future events 
+
+<% @attended_events.all.each do |event| %>
+    <% if event.event.event_end_data > Time.now %>
+    <% end %>
+    <% end %>
+    
