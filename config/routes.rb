@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :user
   resources :event_attendees
+  get 'events/attended_events', to: 'events#attended_events'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root to: "events#index"
   post "/event_attendees/new", to: 'event_attendees#new'
