@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
     def index
+        @events = Event.all
+        @past_events = Event.past_events
+        @future_events = Event.future_events
     end
     def new
         @event = Event.new
@@ -12,8 +15,6 @@ class EventsController < ApplicationController
         @event = Event.new(event_params)
         @event.save!
         redirect_to @event
-    end
-    def index
     end
 
     def all_events 

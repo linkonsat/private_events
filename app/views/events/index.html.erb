@@ -14,3 +14,12 @@ hello friends!
 <%= link_to "Register here to create new events!", new_user_registration_path %>
 <% end %>
 <%= link_to "Click here to view all events", url = "events/all_events" %>
+future events
+<% @future_events.each do |event| %>
+    <%= event.name %>
+    <% end %>
+    past events 
+<% @past_events.each do |event| %>
+  <%= event.name %>
+    <% end %>
+
