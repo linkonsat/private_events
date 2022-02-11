@@ -1,14 +1,21 @@
 Past Events
+<% if @attended_events.empty? %>
+No past events found
 <% @attended_events.all.each do |event| %>
-    <% if event.event.event_end_date < Time.now %>
+    <% if event == nil %>
+    No past events found.
+    <% else event.event.event_end_date < Time.now %>
     <%= event.event.event_end_date %>
     <% end %>
 <% end %>
+<% end %>
 
 Future events 
-
+<% if @attended_events.empty? %>
+No future events found
 <% @attended_events.all.each do |event| %>
     <% if event.event.event_end_date > Time.now %>
     <%= event.event.event_end_date %>
+    <% end %>
     <% end %>
     <% end %>

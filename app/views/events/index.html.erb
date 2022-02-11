@@ -22,5 +22,6 @@ future events
 <% @past_events.each do |event| %>
   <%= event.name %>
     <% end %>
-
+    <% if user_signed_in? %>
 <%= link_to "View registered events", url = 'events/attended_events' %>
+<% end %>
