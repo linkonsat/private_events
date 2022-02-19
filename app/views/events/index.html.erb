@@ -1,27 +1,31 @@
-hello friends!
-
-<% if user_signed_in? %>
-  <%= link_to current_user.email, edit_user_registration_path %>
-  <%= button_to "Log out", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Log in", new_user_session_path %>
-  <%= link_to "Register", new_user_registration_path %>
-<% end %>
-
+<%= render "static_files/top_nav" %>
+<div class="main_body_container">
 <% if user_signed_in? %>
 <%= link_to "create new event", url = "events/new" %> 
-<% else %>
-<%= link_to "Register here to create new events!", new_user_registration_path %>
 <% end %>
 <%= link_to "Click here to view all events", url = "events/all_events" %>
+<div class="all_events_container" >
+<div>
 future events
 <% @future_events.each do |event| %>
     <%= event.name %>
     <% end %>
+</div>
+<div>
     past events 
 <% @past_events.each do |event| %>
   <%= event.name %>
     <% end %>
+  </div>
+  </div>
+  <div>
     <% if user_signed_in? %>
 <%= link_to "View registered events", url = 'events/attended_events' %>
+<% else %>
+Sign in to view all your event information:
+<%= link_to "Log in", new_user_session_path %>
+</div>
+</div>
+
 <% end %>
+</div>

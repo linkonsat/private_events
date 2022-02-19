@@ -13,3 +13,44 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+html {
+   height: 100%;
+}
+
+ .top_nav_bar {
+    display: flex;
+    justify-content: center;
+    height: 12.5%;
+    background-color: rgb(189, 176, 247);
+    color: black;
+    border-bottom: solid;
+    
+ }
+
+ .nav_bar_items {
+    width: 75px;
+}
+
+.main_body_container {
+    display: flex; 
+    flex-direction: row;
+}
+.all_events_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    align-self: center;
+    align-items: center;
+    column-count: 2;
+}
+
+.user_info_links {
+
+}
