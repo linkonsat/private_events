@@ -23,7 +23,30 @@ class EventsController < ApplicationController
 
     def attended_events 
         @attended_events = EventAttendee.where("id = ?", current_user[:id])
+        #debugger
     end
+    def edit 
+        @event = Event.find(params[:id])
+       # debugger
+    end
+
+    def update
+        #debugger
+        @event = Event.find(params[:id])
+        @event.update(event_params)
+        #debugger
+    end
+
+    def destroy 
+        @event = Event.find(params[:id])
+        @event.destroy 
+        redirect_to root_path, status: :see_other   
+    end 
+    def created_events
+        #   debugger
+        @created_events = Event.where("user_id =?", current_user[:id])
+    end
+
     private 
     def event_params
         params.require(:event).permit(:name, :description, :creator, :event_date, :event_end_date, :user_id)

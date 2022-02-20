@@ -1,0 +1,7 @@
+You can view your created events here. Select a event to to edit event details.
+<% @created_events.each do |event| %>
+    <%= event.name %>
+    <%= event.description %>
+    <%= link_to "Edit", edit_event_path(event) %>  
+    <%= button_to "Delete", event_path(event), method: :delete %>
+    <% end %> 

@@ -6,6 +6,13 @@ class EventAttendeesController < ApplicationController
     @event_attendee.save
   end
 
+  def destroy
+    @attendee = EventAttendee.where("attendee_id = ?",params[:id])
+    debugger
+    @attendee.first.destroy
+    #redirect_to event_edit_path
+  end
+
   private 
   def event_attendee_params 
     params.permit(:attendee_id, :event_id)

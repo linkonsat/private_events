@@ -26,13 +26,20 @@ html {
  .top_nav_bar {
     display: flex;
     justify-content: center;
-    height: 12.5%;
+    height: 120px;
     background-color: rgb(189, 176, 247);
     color: black;
     border-bottom: solid;
-    
  }
 
+ .bottom_nav_bar {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    background-color: rgb(189, 176, 247);
+    color: black;
+    border-top: solid;
+ }
  .nav_bar_items {
     width: 33%;
 }
@@ -41,6 +48,7 @@ html {
     display: flex; 
     flex-direction: row;
     height: 75%;
+    background-color: rgb(189, 176, 247);
 }
 .all_events_container {
     display: flex;
