@@ -8,13 +8,21 @@
 <div>
 future events
 <% @future_events.each do |event| %>
-    <%= event.name %>
+  <% if event.event_option.private == false %>
+    Public event: <%= event.name %>
+    <% else %>
+    Private event: <%= event.name %>
+    <% end %>
     <% end %>
 </div>
 <div>
     past events 
 <% @past_events.each do |event| %>
-  <%= event.name %>
+  <% if event.event_option.private == false %>
+    Public event: <%= event.name %>
+    <% else %>
+    Private event: <%= event.name %>
+    <% end %>
     <% end %>
   </div>
   </div>
