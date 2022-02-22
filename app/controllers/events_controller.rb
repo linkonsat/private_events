@@ -28,6 +28,7 @@ class EventsController < ApplicationController
     def edit 
         @event = Event.find(params[:id])
         @invitee = User.all
+        @event_invite = EventInvite.new
        # debugger
     end
 

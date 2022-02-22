@@ -22,3 +22,4 @@
     <%= form.submit %>
     <% end %>
 <%= render "static_files/guest_list" %>
+<%= render "static_files/invitee_list", locals = {:event_invite => @event_invite, :event => @event} %>
