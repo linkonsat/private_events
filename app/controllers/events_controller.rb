@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     end
 
     def all_events 
-        @event = Event.all
+        @event = Event.all 
     end
 
     def attended_events 
@@ -27,6 +27,7 @@ class EventsController < ApplicationController
     end
     def edit 
         @event = Event.find(params[:id])
+        @invitee = User.all
        # debugger
     end
 
@@ -49,7 +50,6 @@ class EventsController < ApplicationController
 
     private 
     def event_params
-        params.require(:event).permit(:name, :description, :creator, :event_date, :event_end_date, :user_id)
+        params.require(:event).permit(:name, :description, :creator, :event_date, :event_end_date, :user_id, event_option_attributes: [:maximum_guests, :private, :reoccuring, :id])
     end
-
 end

@@ -8,10 +8,17 @@
     <%= form.label :event_end_date %>
     <%= form.datetime_field :event_end_date, :value => @event.event_end_date %>
     <%= form.hidden_field :user_id, value: current_user.id %>
-    <%= form.radio_button :age, "child" %>
-    <%= form.label :age_child, "I am younger than 21" %>
-    <%= form.radio_button :age, "adult" %>
-    <%= form.label :age_adult, "I am over 21" %>
+    <%= form.fields_for :event_option do |option_form| %>
+        Guest count: <%= option_form.number_field :maximum_guests, in: 1..10000 %>
+        <%= option_form.radio_button(:private, true) %>
+        <%= label_tag(:private?, "Private event") %>
+        <%= option_form.radio_button(:private,false) %>
+        <%= label_tag(:private, "Public event.") %>
+        <%= option_form.radio_button(:reoccuring, true) %>
+        <%= label_tag(:reoccuring?, "Reoccuring event.") %>
+        <%= option_form.radio_button(:reoccuring, false) %>
+        <%= label_tag(:reoccuring?, "Non-reoccuring event.") %>
+        <% end %>
     <%= form.submit %>
     <% end %>
 <%= render "static_files/guest_list" %>
