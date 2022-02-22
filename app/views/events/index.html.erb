@@ -1,11 +1,18 @@
 <%= render "static_files/top_nav" %>
 <div class="main_body_container">
+<div class="event_options">
 <% if user_signed_in? %>
+<div>
 <%= link_to "create new event", url = "events/new" %> 
+</div>
 <% end %>
+<div>
 <%= link_to "Click here to view all events", url = "events/all_events" %>
+</div>
+</div>
 <div class="all_events_container" >
 <div>
+Event spotlights
 future events
 <% @future_events.each do |event| %>
   <% if event.event_option.private == false %>
@@ -28,8 +35,12 @@ future events
   </div>
   <div>
     <% if user_signed_in? %>
+    <div>
 <%= link_to "View registered events", url = 'events/attended_events' %>
+</div>
+<div>
 <%= link_to "View created events", url = 'events/created_events' %>
+</div>
 <% else %>
 Sign in to view all your registed events information:
 <%= link_to "Log in", new_user_session_path %>
