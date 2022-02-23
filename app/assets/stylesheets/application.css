@@ -73,3 +73,8 @@ html {
     height: 50%;
     overflow: auto; 
 }
+
+.event_options {
+    height: 25%;
+    margin-bottom: 14%;
+}

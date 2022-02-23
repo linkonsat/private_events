@@ -21,5 +21,12 @@
         <% end %>
     <%= form.submit %>
     <% end %>
+    <%= form_with model: @event_invite do |form| %>
+        <%= form.collection_select :invitee_id, User.order(:email), :id, :email %>
+        <%= form.hidden_field :event_id, value: @event.id %>
+        <%= form.hidden_field :creator_id, value: @event.user.id %>
+        <%= form.hidden_field :accepted, value: "false" %>
+        <%= form.submit %>
+        <% end %>
 <%= render "static_files/guest_list" %>
 <%= render "static_files/invitee_list", locals = {:event_invite => @event_invite, :event => @event} %>

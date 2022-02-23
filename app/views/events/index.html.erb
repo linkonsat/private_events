@@ -12,8 +12,10 @@
 </div>
 <div class="all_events_container" >
 <div>
+<div>
 Event spotlights
-future events
+<div>
+Future events.
 <% @future_events.each do |event| %>
   <% if event.event_option.private == false %>
     Public event: <%= event.name %>
@@ -23,7 +25,10 @@ future events
     <% end %>
 </div>
 <div>
-    past events 
+Past events.
+</div>
+</div>
+<div>
 <% @past_events.each do |event| %>
   <% if event.event_option.private == false %>
     Public event: <%= event.name %>
@@ -32,10 +37,10 @@ future events
     <% end %>
     <% end %>
   </div>
-  
+  </div>
 
   </div>
-  <div>
+  <div class="event_options">
     <% if user_signed_in? %>
     <div>
 <%= link_to "View registered events", url = 'events/attended_events' %>

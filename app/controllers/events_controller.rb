@@ -6,7 +6,11 @@ class EventsController < ApplicationController
     end
     def new
         @event = Event.new
+        if(Event.all.empty?)
+            @event_id = 1 
+        else
         @event_id = Event.last.id + 1
+        end
         @event.build_event_option
     end
 
@@ -30,7 +34,7 @@ class EventsController < ApplicationController
     end
     def edit 
         @event = Event.find(params[:id])
-        @invitee = User.all
+        @event_invite = EventInvite.new
     end
 
     def update
@@ -46,7 +50,7 @@ class EventsController < ApplicationController
         redirect_to root_path, status: :see_other   
     end 
     def created_events
-          debugger
+          #debugger
         @created_events = Event.where("user_id =?", current_user[:id])
     end
 
