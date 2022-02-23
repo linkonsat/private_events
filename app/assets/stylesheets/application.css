@@ -68,3 +68,8 @@ html {
     width: 50%;
     height: 50%;
 }
+.all_events_container {
+    width: 50%;
+    height: 50%;
+    overflow: auto; 
+}

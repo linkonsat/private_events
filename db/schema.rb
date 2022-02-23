@@ -41,6 +41,11 @@ ActiveRecord::Schema.define(version: 2022_02_21_064045) do
     t.index ["event_id"], name: "index_event_options_on_event_id"
   end
 
+  create_table "eventoptions", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "description"

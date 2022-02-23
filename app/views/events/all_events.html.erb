@@ -1,4 +1,16 @@
+<%= render "static_files/top_nav" %>
+<div class="main_body_container">
+<div class="all_events_container">
 Events
 <% @event.each do |event| %>
-    <%= link_to "#{event.name}", event_path(event) %> 
+    <div>
+    Event title: <%= link_to "#{event.name}", event_path(event) %> 
+    </div>
+    <div>
+    Event preview: <%= event.description %>
+    </div>
     <% end %>
+    </div>
+    </div>
+
+    <%= render "static_files/bottom_nav" %>
