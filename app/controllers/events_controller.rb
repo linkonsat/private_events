@@ -6,12 +6,15 @@ class EventsController < ApplicationController
     end
     def new
         @event = Event.new
+        @event_id = Event.last.id + 1
+        @event.build_event_option
     end
 
     def show 
         @event = Event.where("id = ?", params[:id])
     end
     def create 
+       # debugger
         @event = Event.new(event_params)
         @event.save!
         redirect_to @event
@@ -28,8 +31,6 @@ class EventsController < ApplicationController
     def edit 
         @event = Event.find(params[:id])
         @invitee = User.all
-        @event_invite = EventInvite.new
-       # debugger
     end
 
     def update
@@ -45,12 +46,13 @@ class EventsController < ApplicationController
         redirect_to root_path, status: :see_other   
     end 
     def created_events
-        #   debugger
+          debugger
         @created_events = Event.where("user_id =?", current_user[:id])
     end
 
     private 
     def event_params
-        params.require(:event).permit(:name, :description, :creator, :event_date, :event_end_date, :user_id, event_option_attributes: [:maximum_guests, :private, :reoccuring, :id])
+        #debugger
+        params.require(:event).permit(:name, :description, :creator, :event_date, :event_end_date, :user_id, event_option_attributes: [:maximum_guests, :private, :reoccuring, :event_id])
     end
 end

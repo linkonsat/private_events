@@ -1,3 +1,3 @@
 class EventOption < ApplicationRecord
-    belongs_to :event
+    has_one :event
 end

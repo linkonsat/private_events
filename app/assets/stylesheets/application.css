@@ -59,7 +59,12 @@ html {
     align-items: center;
     height: 100%;
 }
-
-.user_info_links {
-
+.main_body_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new_event_container {
+    width: 50%;
+    height: 50%;
 }
