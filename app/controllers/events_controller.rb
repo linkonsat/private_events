@@ -33,6 +33,7 @@ class EventsController < ApplicationController
         #debugger
     end
     def edit 
+        #debugger
         @event = Event.find(params[:id])
         @event_invite = EventInvite.new
     end

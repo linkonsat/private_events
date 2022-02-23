@@ -1,0 +1,19 @@
+<%= render "static_files/top_nav" %>
+<div class="main_body_container">
+<div class="all_events_container">
+
+View all your event invites here!
+<% @invites.each do |invite| %>
+    You received an invite from <%= invite.creator.email %>.
+    For the event <%= invite.event.name %>
+    If you want to reject this invite click decline to reject the invite or accept to be added to the event.
+    <%= button_to "Reject", event_invite_path(invite), method: :delete %>
+    <%= button_to "Accept", new_event_attendee_path(invite), params: {:attendee_id => invite.invitee_id, :event_id => invite.event_id }%>
+    <% end %>
+
+
+
+</div>
+</div>
+
+<%= render "static_files/bottom_nav" %>

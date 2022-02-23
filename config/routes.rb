@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'events/all_events', to: 'events#all_events'
   get '/events/new', to: 'events#new'
   get '/events/:id', to: 'events#show'
+  get 'all_invites', to: 'event_invites#all_invites'
   resources :events
   # Defines the root path route ("/")
   # root "articles#index"
