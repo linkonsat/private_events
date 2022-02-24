@@ -18,7 +18,6 @@ class EventsController < ApplicationController
         @event = Event.where("id = ?", params[:id])
     end
     def create 
-       # debugger
         @event = Event.new(event_params)
         @event.save!
         redirect_to @event
@@ -30,19 +29,15 @@ class EventsController < ApplicationController
 
     def attended_events 
         @attended_events = EventAttendee.where("id = ?", current_user[:id])
-        #debugger
     end
     def edit 
-        #debugger
         @event = Event.find(params[:id])
         @event_invite = EventInvite.new
     end
 
     def update
-        #debugger
         @event = Event.find(params[:id])
         @event.update(event_params)
-        #debugger
     end
 
     def destroy 
@@ -51,13 +46,11 @@ class EventsController < ApplicationController
         redirect_to root_path, status: :see_other   
     end 
     def created_events
-          #debugger
         @created_events = Event.where("user_id =?", current_user[:id])
     end
 
     private 
     def event_params
-        #debugger
         params.require(:event).permit(:name, :description, :creator, :event_date, :event_end_date, :user_id, event_option_attributes: [:maximum_guests, :private, :reoccuring, :event_id])
     end
 end

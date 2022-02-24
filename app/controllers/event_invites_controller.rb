@@ -1,12 +1,10 @@
 class EventInvitesController < ApplicationController
 
     def new
-        debugger
         @invite = EventInvite.new
     end
 
     def create 
-        debugger
         @invite = EventInvite.new(invite_params)
         #debugger
         @invite.save!
@@ -18,16 +16,13 @@ class EventInvitesController < ApplicationController
     end
 
     def destroy 
-        debugger
         @invite = EventInvite.find(params[:id])
         @invite.destroy
     end
     def all_invites 
         @invites = EventInvite.where("invitee_id = ?", current_user.id)
-       # debugger
     end
     def invite_params
-        #debugger
         params.require(:event_invite).permit(:invitee_id, :event_id, :creator_id, :accepted)
     end
 
