@@ -1,0 +1,2 @@
+class EventUpdateMailer < ApplicationMailer
+end

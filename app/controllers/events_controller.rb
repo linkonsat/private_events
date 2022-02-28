@@ -39,7 +39,7 @@ class EventsController < ApplicationController
         @event = Event.find(params[:id])
         if @event.update(event_params) 
            # debugger
-           # EmailWorkerJob.perform_async(event_id)
+           EmailWorkerJob.perform_async(event_id)
         end
     end
 
