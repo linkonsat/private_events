@@ -1,25 +1,50 @@
+<%= render "static_files/top_nav" %>
+<div class="main_body_container">
+<div class="event_options">
+
 <%= form_with model: @event do |form| %>
+    <div>
     <%= form.label :name %>
     <%= form.text_field :name, :value => @event.name %>
+    </div>
+    <div>
     <%= form.label :description %>
     <%= form.text_field :description, :value => @event.description %>
+    </div>
+    <div>
     <%= form.label :event_date %>
     <%= form.datetime_field :event_date, :value => @event.event_date %>
-    <%= form.label :event_end_date %>
+    </div>
+    <div>
+    <%= form.label :event_end_date %>    
     <%= form.datetime_field :event_end_date, :value => @event.event_end_date %>
+    </div>
+    
     <%= form.hidden_field :user_id, value: current_user.id %>
     <%= form.fields_for :event_option do |option_form| %>
+        <div>
         Guest count: <%= option_form.number_field :maximum_guests, in: 1..10000 %>
+        </div>
+    <div>
         <%= option_form.radio_button(:private, true) %>
         <%= label_tag(:private?, "Private event") %>
+        </div>
+    <div>
         <%= option_form.radio_button(:private,false) %>
         <%= label_tag(:private, "Public event.") %>
+        </div>
+    <div>
         <%= option_form.radio_button(:reoccuring, true) %>
         <%= label_tag(:reoccuring?, "Reoccuring event.") %>
+        </div>
+    <div>
         <%= option_form.radio_button(:reoccuring, false) %>
         <%= label_tag(:reoccuring?, "Non-reoccuring event.") %>
         <% end %>
-    <%= form.submit %>
+        </div>
+        <div>
+        <%= form.submit %>
+        </div>
     <% end %>
     <%= form_with model: @event_invite do |form| %>
         <%= form.collection_select :invitee_id, User.order(:email), :id, :email %>
@@ -30,3 +55,7 @@
         <% end %>
 <%= render "static_files/guest_list" %>
 <%= render "static_files/invitee_list", locals = {:event_invite => @event_invite, :event => @event} %>
+
+</div>
+</div>
+<%= render "static_files/bottom_nav" %>

@@ -1,4 +1,6 @@
+<div class="guest_list">
 <% @event.attendees.each do |guest|%>
     <%= guest.email %>
     <%= button_to "Delete", event_attendee_path(guest), method: :delete %>
     <% end %>
+</div>

@@ -79,3 +79,7 @@ html {
     margin-bottom: 14%;
 }
 
+.guest_list {
+    overflow: auto;
+    height: 100%;
+}
