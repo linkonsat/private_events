@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
     has_many :event_attendees, foreign_key: :event_id
     has_many :attendees, through: :event_attendees, dependent: :destroy
-    has_one :event_option
+    has_one :event_option, dependent: :destroy
     belongs_to :user
     accepts_nested_attributes_for :event_option
     scope :future_events, -> { where('event_end_date > ?', Time.now) }
