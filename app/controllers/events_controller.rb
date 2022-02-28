@@ -37,7 +37,10 @@ class EventsController < ApplicationController
 
     def update
         @event = Event.find(params[:id])
-        @event.update(event_params)
+        if @event.update(event_params) 
+           # debugger
+           # EmailWorkerJob.perform_async(event_id)
+        end
     end
 
     def destroy 

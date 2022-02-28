@@ -4,7 +4,9 @@ class EventAttendeesController < ApplicationController
     @event_attendee = EventAttendee.new(event_attendee_params)
     if(@event_attendee.save!)
       @event_invite = EventInvite.where("event_id = ?", params[:event_id]).where("invitee_id = ?", params[:attendee_id])
+      if(!@event_invite.empty?)
       @event_invite.first.destroy
+      end
     end
   end
 
