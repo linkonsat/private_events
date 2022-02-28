@@ -1,7 +1,24 @@
-You can view your created events here. Select a event to to edit event details.
+<%= render "static_files/top_nav" %>
+<div class="main_body_container">
+<div class="event_options">
+<p>
+You can view your created events here. 
+Select a event to edit event details.
+</p>
 <% @created_events.each do |event| %>
-    <%= event.name %>
-    <%= event.description %>
+    <div>
+    Name: <%= event.name %>
+    </div>
+    <div>
+    Description: <%= event.description %>
+    </div>
+    <div>
     <%= link_to "Edit", edit_event_path(event) %>  
     <%= button_to "Delete", event_path(event), method: :delete %>
+    </div>
     <% end %> 
+
+
+</div>
+</div>
+<%= render "static_files/bottom_nav" %>
