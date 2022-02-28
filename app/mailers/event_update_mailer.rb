@@ -1,10 +1,8 @@
 class EventUpdateMailer < ApplicationMailer
-    def event_update(params)
-        @emails = params[:emails]
-        @emails.each do |email|
-                mail(to: email, subject: 'Event info change')
-        end
-
+    def event_update
+        @event = params[:event]
+        @email = params[:attendee].email
+                mail(to: @email, subject: 'Event info change')
       end
     
 end
