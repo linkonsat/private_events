@@ -94,3 +94,8 @@ html {
     height: 75%;
     background-color: rgb(189, 176, 247);
 }
+
+.sign_in {
+    border: groove;
+    padding: 15px;
+}
