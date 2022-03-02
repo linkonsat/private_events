@@ -8,7 +8,7 @@ class Event < ApplicationRecord
     scope :past_events, -> { where('event_end_date < ?', Time.now) }
     scope :future_events_spotlight, -> { where('event_end_date > ?', Time.now).limit(5) }
     scope :past_events_spotlight, -> { where('event_end_date < ?', Time.now).limit(5) }
-
+    scope :events_search_creator, -> (creator) { where("creator = ?", creator ) }
     def self.public_events 
         events = Event.all
         public_events = []
