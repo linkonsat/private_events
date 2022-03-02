@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
     def index
         @events = Event.all
-        @past_events = Event.past_events
-        @future_events = Event.future_events
+        @past_events = Event.past_events_spotlight
+        @future_events = Event.future_events_spotlight
     end
     def new
         @event = Event.new

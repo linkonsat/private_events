@@ -6,6 +6,8 @@ class Event < ApplicationRecord
     accepts_nested_attributes_for :event_option
     scope :future_events, -> { where('event_end_date > ?', Time.now) }
     scope :past_events, -> { where('event_end_date < ?', Time.now) }
+    scope :future_events_spotlight, -> { where('event_end_date > ?', Time.now).limit(5) }
+    scope :past_events_spotlight, -> { where('event_end_date < ?', Time.now).limit(5) }
 
     def self.public_events 
         events = Event.all
