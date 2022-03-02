@@ -1,9 +1,22 @@
 <%= render "static_files/top_nav" %>
-<div class="main_body_container">
+<div class="main_home_container">
 <div class="event_options">
 <% if user_signed_in? %>
 <div>
 <%= link_to "create new event", url = "events/new" %> 
+</div>
+<% end %>
+<div class="event_options">
+<% if user_signed_in? %>
+<div>
+<%= link_to "View registered events", url = 'events/attended_events' %>
+</div>
+<div>
+<%= link_to "View created events", url = 'events/created_events' %>
+</div>
+<% else %>
+Sign in to view all your registed events information:
+<%= link_to "Log in", new_user_session_path %>
 </div>
 <% end %>
 <div>
@@ -17,12 +30,14 @@ Event spotlights
 <div>
 Future events.
 <% @future_events.each do |event| %>
+  <div>
   <% if event.event_option.private == false %>
     Public event: <%= event.name %>
     <% else %>
     Private event: <%= event.name %>
     <% end %>
     <% end %>
+    </div>
 </div>
 <div>
 Past events.
@@ -30,31 +45,21 @@ Past events.
 </div>
 <div>
 <% @past_events.each do |event| %>
+  <div>
   <% if event.event_option.private == false %>
     Public event: <%= event.name %>
     <% else %>
     Private event: <%= event.name %>
     <% end %>
     <% end %>
+    </div>
   </div>
   </div>
 
   </div>
-  <div class="event_options">
-    <% if user_signed_in? %>
-    <div>
-<%= link_to "View registered events", url = 'events/attended_events' %>
-</div>
-<div>
-<%= link_to "View created events", url = 'events/created_events' %>
-</div>
-<% else %>
-Sign in to view all your registed events information:
-<%= link_to "Log in", new_user_session_path %>
-</div>
 </div>
 
-<% end %>
+</div>
 </div>
 </div>
 <%= render "static_files/bottom_nav" %>
