@@ -30,6 +30,7 @@ html {
     background-color: rgb(189, 176, 247);
     color: black;
     border-bottom: solid;
+    align-items: center;
  }
 
  .bottom_nav_bar {
@@ -39,6 +40,7 @@ html {
     background-color: rgb(189, 176, 247);
     color: black;
     border-top: solid;
+    align-items: center;
  }
  .nav_bar_items {
     width: 33%;
