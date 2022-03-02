@@ -7,12 +7,12 @@
 #   Character.create(name: "Luke", movie: movies.first)
 user_count = 0
 event_count = 0
-user_count.times do 
+5.times do 
     user_count += 1
-User.create!(:user_name => "test user#{user_count}", :bio => "test user", :email => "testuser#{user_count}", :password => "#{user_count}test@gmail.com")
+User.create!(:user_name => "test user#{user_count}", :bio => "test user", :email => "testuser@#{user_count}", :password => "#{user_count}test@gmail.com")
 end 
 
-event_count.times do 
+5.times do 
     event_count += 1
     Event.create!(:name => "test event", :description => "A cool test event", :creator => "Bill#{event_count}", :event_date => "#{DateTime.now}", :event_end_date => "#{DateTime.new(2023,2,3,4,5,6,'+03:00')}", :user_id => event_count  )
     EventOption.create!(:maximum_guests => 60, :private => false, :reoccuring => true, :event_id => event_count)
