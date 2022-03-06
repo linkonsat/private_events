@@ -1,36 +1,34 @@
+# frozen_string_literal: true
+
 class Event < ApplicationRecord
-    has_many :event_attendees, foreign_key: :event_id
-    has_many :attendees, through: :event_attendees, dependent: :destroy
-    has_one :event_option, dependent: :destroy
-    belongs_to :user
-    accepts_nested_attributes_for :event_option
-    scope :future_events, -> { where('event_end_date > ?', Time.now) }
-    scope :past_events, -> { where('event_end_date < ?', Time.now) }
-    scope :future_events_spotlight, -> { where('event_end_date > ?', Time.now).limit(5) }
-    scope :past_events_spotlight, -> { where('event_end_date < ?', Time.now).limit(5) }
-    scope :events_search_creator, -> (creator) { where("creator = ?", creator ) }
-    def self.public_events 
-        events = Event.all
-        public_events = []
-        events.each do |event|
-            if(event.event_option.private == false)
-                public_events.push(event)
-            end 
-        end
-
-        return public_events
+  has_many :event_attendees
+  has_many :attendees, through: :event_attendees, dependent: :destroy
+  has_one :event_option, dependent: :destroy
+  belongs_to :user
+  accepts_nested_attributes_for :event_option
+  scope :future_events, -> { where('event_end_date > ?', Time.zone.now) }
+  scope :past_events, -> { where('event_end_date < ?', Time.zone.now) }
+  scope :future_events_spotlight, -> { where('event_end_date > ?', Time.zone.now).limit(5) }
+  scope :past_events_spotlight, -> { where('event_end_date < ?', Time.zone.now).limit(5) }
+  scope :events_search_creator, ->(creator) { where('creator = ?', creator) }
+  def self.public_events
+    events = Event.all
+    public_events = []
+    events.each do |event|
+      public_events.push(event) if event.event_option.private == false
     end
 
-    def self.private_events
-        events = Event.all
-        privated_events = []
-        events.each do |event|
-            if(event.event_option.private == true)
-                privated_events.push(event)
-            end 
-        end
-        return privated_events
+    public_events
+  end
+
+  def self.private_events
+    events = Event.all
+    privated_events = []
+    events.each do |event|
+      privated_events.push(event) if event.event_option.private == true
     end
+    privated_events
+  end
 end
 
-#bug reporting guide for top main site wiki
+# bug reporting guide for top main site wiki

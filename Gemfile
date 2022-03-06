@@ -1,34 +1,36 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.4"
+ruby '2.7.4'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.1"
+gem 'rails', '~> 7.0.1'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+gem 'sprockets-rails'
 
 # Use postgres as the database for Active Record
 gem 'pg'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem 'puma', '~> 5.0'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem "jsbundling-rails"
+gem 'jsbundling-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+gem 'turbo-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
+gem 'stimulus-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+gem 'jbuilder'
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 4.0"
+gem 'redis', '~> 4.0'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -37,10 +39,10 @@ gem "redis", "~> 4.0"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", require: false
+gem 'bootsnap', require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -51,37 +53,37 @@ gem "bootsnap", require: false
 # Use devise for handling user authentication and login.[https://github.com/heartcombo/devise]
 gem 'devise'
 
-#Use simplecov for test coverage
+# Use simplecov for test coverage
 gem 'simplecov', require: false, group: :test
 
-#use sidekiq for background processing and threads to handle multiple jobs.
+# use sidekiq for background processing and threads to handle multiple jobs.
 gem 'sidekiq'
 
-#use letter opener to preview sent emails in the rbowsesr.
-gem "letter_opener", group: :development
+# use letter opener to preview sent emails in the rbowsesr.
+gem 'letter_opener', group: :development
 
-#Add rubocop for rails for best practices.
+# Add rubocop for rails for best practices.
 gem 'rubocop-rails', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem "rspec-rails"
-  gem "factory_bot_rails"
-  gem "faker"
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'rails-controller-testing'
+  gem 'rspec-rails'
 
-      # Capybara, the library that allows us to interact with the browser using Ruby
-      gem 'capybara'
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara'
 
-      # The following gems aids with the nuts and bolts
-      # of interacting with the browser.
-      gem 'webdriver'
+  # The following gems aids with the nuts and bolts
+  # of interacting with the browser.
+  gem 'webdriver'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
+  gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -89,5 +91,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
-
