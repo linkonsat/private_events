@@ -33,8 +33,10 @@ Future events.
   <div>
   <% if event.event_option.private == false %>
     Public event: <%= event.name %>
+    Event date: <%= event.event_date.to_datetime.strftime('%y-%m-%d-%r') %>
     <% else %>
     Private event: <%= event.name %>
+    Event date: <%= event.event_date.to_datetime.strftime('%y-%m-%d-%r') %>
     <% end %>
     </div>
     <% end %>
@@ -62,4 +64,6 @@ Past events.
 </div>
 </div>
 </div>
+</div>
+
 <%= render "static_files/bottom_nav" %>
