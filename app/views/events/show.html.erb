@@ -1,12 +1,24 @@
+<%= render "static_files/top_nav" %>
+<div class="main_home_container">
+<div class="all_events_container">
+
 <% @event.each do |event| %>
-    <% if user_signed_in? %>
-    <%= event.name %>
-    <%= event.description %>
-    <%= event.creator %>
-    <%= event.event_date %>
-    <%= event.event_end_date %>
-    
-<% end %>
+    <div>
+    Name: <%= event.name %>
+    </div>
+    <div>
+    Description: <%= event.description %>
+    </div>
+    <div>
+    Creator: <%= event.creator %>
+    </div>
+    <div>
+    Event date: <%= event.event_date %>
+    </div>
+    <div>
+    Event end date: <%= event.event_end_date %>
+    </div>
+
 <% end %>
 <% @event.first.attendees.each do |attendee| %>
     <%= attendee.user_name %>
@@ -14,7 +26,12 @@
     <%= attendee.email %>
     <% end %> 
     <% if current_user.nil? %>
-    Please sign in to sign up for the event
+    Please sign in or sign up to sign up for the event.
     <% else %>
 <%= button_to "sign up", new_event_attendee_path, params: { :attendee_id => current_user.id, :event_id => @event.first.id }  %>
 <% end %>
+
+</div>
+</div>
+
+<%= render "static_files/bottom_nav" %>
