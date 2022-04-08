@@ -19,13 +19,15 @@
     <%= form.datetime_field :event_end_date %>
     </div>
     <div class="event_choice">
+    <%= form.fields_for :event_tags do |tag_form| %>
     Please note each hashtag must start with `#`,
-    <%= form.label :hashtags, "Hashtags:" %>
-    <%= form.text_field :hashtags %>
+    <%= tag_form.label :name, "Hashtags:" %>
+    <%= tag_form.text_field :name %>
+    <% end %>
     </div>
     <div class="event_choice">
     <%= form.hidden_field :user_id, value: current_user.id %>
-    <%= form.fields_for :event_option do |option_form| %>
+    <%= form.fields_for :event_options do |option_form| %>
         Guest count: <%= option_form.number_field :maximum_guests, in: 1..10000 %>
     </div>
     <div class="event_choice">

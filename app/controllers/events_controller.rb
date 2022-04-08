@@ -15,6 +15,7 @@ class EventsController < ApplicationController
                   Event.last.id + 1
                 end
     @event.build_event_option
+    @event.event_tags.build
   end
 
   def show
@@ -59,6 +60,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :description, :creator, :event_date, :event_end_date, :user_id,
-                                  event_option_attributes: %i[maximum_guests private reoccuring event_id])
+                                  event_option_attributes: %i[maximum_guests private reoccuring event_id],
+                                  event_tags_attributes: [:name])
   end
 end
