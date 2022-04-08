@@ -1,49 +1,53 @@
 <%= render "static_files/top_nav" %>
 <div class="main_body_container">
-<div class="new_event_container">
+  <div class="new_event_container">
 <%= form_with model: @event do |form| %>
     <div>
-    <%= form.label :name %>
+    <%= form.label :name, "Name:" %>
     <%= form.text_field :name %>
     </div>
-    <div>
-    <%= form.label :description %>
+    <div class="event_choice">
+    <%= form.label :description, "Description:" %>
     <%= form.text_field :description %>
     </div>
-    <div>
-    <%= form.label :event_date %>
+    <div class="event_choice">
+    <%= form.label :event_date, "Event date:" %>
     <%= form.datetime_field :event_date %>
     </div>
-    <div>
-    <%= form.label :event_end_date %>
+    <div class="event_choice">
+    <%= form.label :event_end_date, "Event end date:" %>
     <%= form.datetime_field :event_end_date %>
     </div>
-    <div>
-    Please note each hashtag must start with `#`.
-    <%= form.label :hashtags %>
+    <div class="event_choice">
+    Please note each hashtag must start with `#`,
+    <%= form.label :hashtags, "Hashtags:" %>
     <%= form.text_field :hashtags %>
     </div>
-    <div>
+    <div class="event_choice">
     <%= form.hidden_field :user_id, value: current_user.id %>
     <%= form.fields_for :event_option do |option_form| %>
         Guest count: <%= option_form.number_field :maximum_guests, in: 1..10000 %>
-        </div>
-    <div>
+    </div>
+    <div class="event_choice">
+        Public status:
         <%= option_form.radio_button(:private, true) %>
-        <%= label_tag(:private?, "Private event") %>
+        <%= label_tag(:private?, "Private.") %>
         <%= option_form.radio_button(:private,false) %>
-        <%= label_tag(:private, "Public event.") %>
-        </div>
-    <div>
+        <%= label_tag(:private, "Public.") %>
+    </div>
+    <div class="event_choice">
+        Event consistency:
         <%= option_form.radio_button(:reoccuring, true) %>
-        <%= label_tag(:reoccuring?, "Reoccuring event.") %>
+        <%= label_tag(:reoccuring?, "Reoccuring.") %>
         <%= option_form.radio_button(:reoccuring, false) %>
-        <%= label_tag(:reoccuring?, "Non-reoccuring event.") %>
-        </div>
+        <%= label_tag(:reoccuring?, "Non-reoccuring.") %>
+    </div>
         <%= form.hidden_field :event_id, value: "#{@event_id}" %> 
         <% end %>
-    <%= form.submit %>
-    <% end %>
-        </div>
+    <div class="event_choice">    
+      <%= form.submit %>
+    </div>
+      <% end %>
+    </div>
 </div>
     <%= render "static_files/bottom_nav" %>
