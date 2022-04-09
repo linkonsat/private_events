@@ -1,6 +1,8 @@
 class EventTag < ApplicationRecord
   belongs_to :event
   validate :has_hash
+
+
   def has_hash
     valid_tags = []
     split_tags = self[:name].split(" ")

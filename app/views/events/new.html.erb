@@ -27,7 +27,7 @@
     </div>
     <div class="event_choice">
     <%= form.hidden_field :user_id, value: current_user.id %>
-    <%= form.fields_for :event_options do |option_form| %>
+    <%= form.fields_for :event_option do |option_form| %>
         Guest count: <%= option_form.number_field :maximum_guests, in: 1..10000 %>
     </div>
     <div class="event_choice">

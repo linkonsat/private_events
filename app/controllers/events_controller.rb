@@ -23,6 +23,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    debugger
     @event = Event.new(event_params)
     @event.save!
     redirect_to @event
