@@ -29,6 +29,9 @@ Sign in to view all your registed events information:
 Event spotlights
 <div>
 Future events.
+<% if @future_events.empty? %>
+No future events found!
+<% else %>
 <% @future_events.each do |event| %>
   <div>
   <% if event.event_option.private == false %>
@@ -40,12 +43,13 @@ Future events.
     <% end %>
     </div>
     <% end %>
-</div>
-<div>
-Past events.
+<% end %>
 </div>
 </div>
 <div>
+<% if @past_events.empty? %>
+No past events found!
+<% else %>
 <% @past_events.each do |event| %>
   <div>
   <% if event.event_option.private == false %>
@@ -54,6 +58,7 @@ Past events.
     Private event: <%= event.name %>
     <% end %>
     </div>
+    <% end %>
     <% end %>
   </div>
   </div>
