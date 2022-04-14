@@ -32,4 +32,3 @@ class Event < ApplicationRecord
   end
 end
 
-# bug reporting guide for top main site wiki
