@@ -10,13 +10,13 @@
   <%= button_to "Log out", destroy_user_session_path, method: :delete %>
   </div>
 <% else %>
-<div>
+  <div class="link_style">
   <%= link_to "Log in", new_user_session_path %>
   </div>
   <div>
   <%= link_to "Home", url = "/" %>
   </div>
-  <div>
+  <div class="link_style">
   <%= link_to "Register", new_user_registration_path %>
   </div>
 <% end %>
