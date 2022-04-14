@@ -130,4 +130,9 @@ html {
     border-color: black;
     border: solid 1px;
     padding: 3px;
+    box-shadow:5px 3px 3px black;
+}
+
+.button_style {
+    box-shadow:5px 3px 3px black;
 }
