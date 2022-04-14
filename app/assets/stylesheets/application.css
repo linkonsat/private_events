@@ -141,6 +141,13 @@ html {
     box-shadow:5px 3px 3px black;
 }
 
-.new_event_heading {
-    text-align:center;
+.devise_link {
+    width: 30%;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.remember_me_link {
+    margin: auto;
+    margin-left: 10%;
 }
