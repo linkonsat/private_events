@@ -1,42 +1,33 @@
 <%= render "static_files/top_nav" %>
+<div class="main_container">
+<div class="event_options">
+  <% if user_signed_in? %>
+    <div class="link_style">
+      <%= link_to "create new event", url = "events/new" %> 
+    </div>
+  <% end %>
+    <% if user_signed_in? %>
+      <div class="link_style">
+        <%= link_to "View registered events", url = 'events/attended_events' %>
+      </div>
+      <div class="link_style">
+        <%= link_to "View created events", url = 'events/created_events' %>
+      </div>
+    <% end %>
+  </div>
 <div class="main_home_container">
-<div class="event_options">
-<% if user_signed_in? %>
-<div>
-<%= link_to "create new event", url = "events/new" %> 
-</div>
-<% end %>
-<div class="event_options">
-<% if user_signed_in? %>
-<div>
-<%= link_to "View registered events", url = 'events/attended_events' %>
-</div>
-<div>
-<%= link_to "View created events", url = 'events/created_events' %>
-</div>
-<% else %>
-Sign in to view all your registed events information:
-<%= link_to "Log in", new_user_session_path %>
-<% end %>
-</div>
-<div>
-<%= link_to "Click here to view all events", url = "events/all_events" %>
-</div>
-</div>
-<div class="all_events_container" >
-<div>
-<div>
-Event spotlights
-<div>
-Future events.
 <% if @future_events.empty? %>
-No future events found!
+<p>
+No future events found! Why not start a party and create your own! <%= link_to "create new event", url = "events/new" %> 
+</p>
 <% else %>
 <% @future_events.each do |event| %>
   <div>
   <% if event.event_option.private == false %>
+  <div class="all_events_container">
     Public event: <%= event.name %>
     Event date: <%= event.event_date.to_datetime.strftime('%y-%m-%d-%r') %>
+    </end>
     <% else %>
     Private event: <%= event.name %>
     Event date: <%= event.event_date.to_datetime.strftime('%y-%m-%d-%r') %>
@@ -46,29 +37,4 @@ No future events found!
 <% end %>
 </div>
 </div>
-<div>
-<% if @past_events.empty? %>
-No past events found!
-<% else %>
-<% @past_events.each do |event| %>
-  <div>
-  <% if event.event_option.private == false %>
-    Public event: <%= event.name %>
-    <% else %>
-    Private event: <%= event.name %>
-    <% end %>
-    </div>
-    <% end %>
-    <% end %>
-  </div>
-  </div>
-
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
 <%= render "static_files/bottom_nav" %>
