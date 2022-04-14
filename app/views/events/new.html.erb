@@ -2,7 +2,10 @@
 <div class="main_body_container">
   <div class="new_event_container">
 <%= form_with model: @event do |form| %>
-    <div>
+  <h1 class="new_event_heading">
+  Event Options.
+  </h1>
+    <div class="event_choice">
     <%= form.label :name, "Name:" %>
     <%= form.text_field :name %>
     </div>

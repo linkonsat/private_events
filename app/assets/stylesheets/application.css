@@ -72,10 +72,12 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: whitesmoke;
 }
 .new_event_container {
-    width: 50%;
-    height: 50%;
+    height: 65%;
+    border: ridge 3px red;
+    box-shadow:5px 3px 3px black;
 }
 .all_events_container {
     width: 50%;
@@ -111,7 +113,9 @@ html {
 }
 
 .event_choice {
-    margin-top: 5px;
+    margin-top: 10px;
+    border-top: groove 2px red;
+    padding: 5px;
 }
 
 .registration_display {
@@ -135,4 +139,8 @@ html {
 
 .button_style {
     box-shadow:5px 3px 3px black;
+}
+
+.new_event_heading {
+    text-align:center;
 }
