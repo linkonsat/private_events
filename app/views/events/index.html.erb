@@ -15,6 +15,9 @@
       </div>
     <% end %>
   </div>
+  <h2 class="slide_in_header">
+Featured Events
+</h2>
 <div class="main_home_container">
 <% if @future_events.empty? %>
 <p>
@@ -27,10 +30,12 @@ No future events found! Why not start a party and create your own! <%= link_to "
   <div class="all_events_container">
     Public event: <%= event.name %>
     Event date: <%= event.event_date.to_datetime.strftime('%y-%m-%d-%r') %>
-    </end>
+    </div>
     <% else %>
+    <div class="all_events_container">
     Private event: <%= event.name %>
     Event date: <%= event.event_date.to_datetime.strftime('%y-%m-%d-%r') %>
+    </div>
     <% end %>
     </div>
     <% end %>
