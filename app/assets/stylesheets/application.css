@@ -83,6 +83,8 @@ html {
     width: 50%;
     height: 50%;
     overflow: auto; 
+    border: ridge 3px red;
+    box-shadow:5px 3px 3px black;
 }
 
 .event_options {
@@ -99,9 +101,9 @@ html {
 }
 
 .main_home_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     align-items: center;
     background-color: whitesmoke;
     height: 100%;
