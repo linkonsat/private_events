@@ -53,7 +53,7 @@ No future events found! Why not start a party and create your own! <%= link_to "
       Ends at <%= event.event_end_date.to_datetime.strftime('%y-%m-%d-%r') %>
     </div>
     <div> 
-      <%= button_to "Sign Up", new_event_attendee_path, params: { attendee_id: current_user, event_id: event.id } %>
+      Not currently accepting public sign ups!
     </div>
     </div>
     <% end %>
