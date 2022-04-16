@@ -1,25 +1,79 @@
-Past Events
+<%= render "static_files/top_nav" %>
+<div class="main_container">
+<div class="event_options">
+  <% if user_signed_in? %>
+    <div class="link_style">
+      <%= link_to "create new event", url = "events/new" %> 
+    </div>
+  <% end %>
+    <% if user_signed_in? %>
+      <div class="link_style">
+        <%= link_to "View registered events", url = 'events/attended_events' %>
+      </div>
+      <div class="link_style">
+        <%= link_to "View created events", url = 'events/created_events' %>
+      </div>
+    <% end %>
+  </div>
+  <div class="fade_in_content">
+  <h2>
+    Attended
+  </h2>
+  <h2>
+    Upcoming 
+  </h2>
+  </div>
+  <div class="attended_events_container">
 <% if @attended_events.empty? %>
+<div class="fade_in_content">
 No past events found
+</div>
 <% else %>
-<% @attended_events.all.each do |event| %>
-    <% if event == nil %>
-    No past events found.
-    <% elsif event.event.event_end_date < Time.now %>
-    <%= event.event.event_end_date %>
-    <%= event.event.description %>
-    <% end %>
+<div class="attended_events">
+  <% @attended_events.all.each do |event| %>
+    <div class="fade_in_event">
+      <% if event.event.event_end_date < Time.now %>
+        <div class="fade_in_event_style">
+          <div>
+            <%= event.event.event_date.to_datetime.strftime('%y-%m-%d-%r') %>
+          </div>
+          <div>
+            <%= event.event.event_end_date.to_datetime.strftime('%y-%m-%d-%r') %>
+          </div>
+          <div>
+            <%= event.event.description %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
 <% end %>
-<% end %>
-
-Future events 
 <% if @attended_events.empty? %>
-No future events found
+  <div class="fade_in_content">
+    No future events found
+  </div>
 <% else %>
-<% @attended_events.all.each do |event| %>
+  <div class="attended_events">
+  <% @attended_events.all.each do |event| %>
     <% if event.event.event_end_date > Time.now %>
-    <%= event.event.event_end_date %>
-    
+      <div class="fade_in_event">
+        <div class="fade_in_event_style">
+          <div>
+            <%= event.event.event_date.to_datetime.strftime('%y-%m-%d-%r') %>
+          </div>
+          <div>
+            <%= event.event.event_end_date.to_datetime.strftime('%y-%m-%d-%r') %>
+          </div>
+          <div>
+            <%= event.event.description %>
+          </div>
+        </div>
+      </div>
     <% end %>
-    <% end %>
-    <% end %>
+  <% end %>
+  </div>
+<% end %>
+</div>
+</div>
+<%= render "static_files/bottom_nav" %>

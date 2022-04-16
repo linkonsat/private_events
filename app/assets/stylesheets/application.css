@@ -100,6 +100,41 @@ html {
     height: 100%;
 }
 
+.fade_in_content {
+    display: flex;
+    justify-content: space-evenly;
+    animation-duration: 2s;
+    animation-name: fadein;
+}
+
+.fade_in_event {
+    display: flex;
+    justify-content: space-evenly;
+    animation-duration: 2s;
+    animation-name: fadein;
+}
+
+.fade_in_event_style {
+    width: 50%;
+    height: 50%;
+    overflow: auto; 
+    border: ridge 3px red;
+    box-shadow:5px 3px 3px black;
+    padding: 5px;
+}
+
+.attended_events {
+    height: 100%;
+    overflow: auto;
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .main_home_container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -110,6 +145,16 @@ html {
     animation-duration: 2s;
     animation-name: slidein;
 }
+
+.attended_events_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: whitesmoke;
+    height: 85%;
+    
+}
+
 
 .slide_in_header {
     background-color: whitesmoke;
