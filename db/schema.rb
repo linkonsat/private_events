@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_02_023927) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_24_163922) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -87,6 +87,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_02_023927) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
+  create_table "promo_codes", force: :cascade do |t|
+    t.bigint "reward_id"
+    t.string "code"
+    t.decimal "value_off"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reward_id"], name: "index_promo_codes_on_reward_id"
+  end
+
+  create_table "rewards", force: :cascade do |t|
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_rewards_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "user_name"
     t.string "bio"
@@ -110,4 +124,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_02_023927) do
   add_foreign_key "event_tags", "events"
   add_foreign_key "event_tags", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "promo_codes", "rewards"
+  add_foreign_key "rewards", "users"
 end

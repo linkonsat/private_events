@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :user_name, uniqueness: { message: 'User name is already taken. Please select another. ' }
   has_many :events
   has_many :event_invites
+  has_one :reward
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
