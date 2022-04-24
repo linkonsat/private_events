@@ -91,6 +91,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_24_163922) do
     t.bigint "reward_id"
     t.string "code"
     t.decimal "value_off"
+    t.datetime "expiration_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["reward_id"], name: "index_promo_codes_on_reward_id"

@@ -4,6 +4,7 @@ class AddPromoCodeToRewards < ActiveRecord::Migration[7.0]
       t.belongs_to :reward, foreign_key: true
       t.string :code 
       t.decimal :value_off
+      t.datetime :expiration_date
       t.timestamps
     end
   end
