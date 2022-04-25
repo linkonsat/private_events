@@ -33,6 +33,12 @@ class EventsController < ApplicationController
     @event = Event.all
   end
 
+  def event_actions 
+    debugger
+    @event = Event.find(params[:format])
+    @event_invite = EventInvite.new
+  end
+
   def attended_events
     @attended_events = EventAttendee.where('id = ?', current_user[:id])
   end

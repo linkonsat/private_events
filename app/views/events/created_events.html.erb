@@ -19,6 +19,8 @@ Select a event to edit event details.
     <%= link_to "Edit", edit_event_path(event) %>  
     </div>
     <div>
+    <%= link_to "Advanced Actions",  events_event_actions_path(event) %>
+    <div>
     <%= button_to "Delete", event_path(event), method: :delete %>
     </div>
     </div>
