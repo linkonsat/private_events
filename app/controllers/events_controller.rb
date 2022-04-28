@@ -23,7 +23,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    debugger
     @event = Event.new(event_params)
     @event.save!
     redirect_to @event
@@ -34,9 +33,12 @@ class EventsController < ApplicationController
   end
 
   def event_actions 
-    debugger
     @event = Event.find(params[:format])
     @event_invite = EventInvite.new
+    @current_user = User.find(current_user.id)
+    @reward_id = @current_user.reward.id
+    code = PromoCode.generate_promo_code
+    response.headers['code'] = code.as_json
   end
 
   def attended_events

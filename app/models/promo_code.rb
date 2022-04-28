@@ -9,7 +9,6 @@ class PromoCode < ApplicationRecord
         char_number = rand(25) + 97
         promo_code << char_number.chr
     end
-    debugger
     if (PromoCode.find_code(promo_code).empty?)
         return promo_code 
     else

@@ -24,6 +24,34 @@ html {
    height: 100%;
 }
 
+.advanced_event_options {
+    height: 75%;
+}
+
+.advanced_options_headings {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.advanced_option_tab {
+    border: solid black 2px;
+    padding: 5px;
+    background-color: rgb(167, 164, 164);
+    cursor: default;
+}
+
+.advanced_option_tab:hover {
+    background-color: grey;
+}
+
+.event_invite_table  {
+    display: block;
+}
+
+.event_promo_codes {
+    display: none;
+}
 .main_container {
     height: 75%;
     background-color: whitesmoke;

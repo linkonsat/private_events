@@ -7,7 +7,6 @@ class EventInvitesController < ApplicationController
 
   def create
     @invite = EventInvite.new(invite_params)
-    # debugger
     @invite.save!
     redirect_back_or_to "/events/#{event_id_param}/edit"
   end

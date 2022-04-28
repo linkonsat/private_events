@@ -4,3 +4,8 @@
 
 import { application } from "./application"
 
+import PromoCodeController from "./promo_code_controller.js"
+application.register("promo-code", PromoCodeController)
+
+import TabController from "./tab_controller.js"
+application.register("tab", TabController)

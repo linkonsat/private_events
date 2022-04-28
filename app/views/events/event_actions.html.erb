@@ -1,7 +1,43 @@
-<%= form_with model: @event_invite do |form| %>
-    <%= form.collection_select :invitee_id, User.order(:email), :id, :email %>
-    <%= form.hidden_field :event_id, value: @event.id %>
-    <%= form.hidden_field :creator_id, value: @event.user.id %>
-    <%= form.hidden_field :accepted, value: "false" %>
-    <%= form.submit %>
-    <% end %>
+<%= render "static_files/top_nav" %>
+  <div class="advanced_event_options" data-controller="tab">
+    <div class="advanced_options_headings" >
+      <div class="advanced_option_tab" id= "event_invite" data-action="click->tab#reveal" data-tab-target="selectedTab">
+        Event invites
+      </div>
+      <div class="advanced_option_tab" id ="promo_code" data-action="click->tab#reveal" data-tab-target="selectedTab">
+        Promo codes
+      </div>
+   </div>
+    <div class="advanced_option_table" id ="event_invite" data-tab-target="tab">
+     <div class="event_invite_table">
+       <%= form_with model: @event_invite do |form| %>
+        <%= form.collection_select :invitee_id, User.order(:email), :id, :email %>
+        <%= form.hidden_field :event_id, value: @event.id %>
+        <%= form.hidden_field :creator_id, value: @event.user.id %>
+        <%= form.hidden_field :accepted, value: "false" %>
+        <%= form.submit %>
+      <% end %>
+    </div>
+    </div>
+    <div class="event_promo_codes" id="promo_code" data-tab-target="tab" data-controller="promo-code">
+      <div>
+        <div data-action="click->promo-code#generate_code">
+        test
+        </div>
+      </div>
+      <%= form_with model: @promocode do |form| %>
+      <%= form.label :code, "Code" %>
+      <%= form.text_field :code %>
+      <div data-promo-code-target="promoCode">
+      </div>  
+      <%= form.label :value_off, "Discount",  data: { promo_code_target: 'promoCode' }%>
+      <%= form.label :expiration_date, "Expiration date" %>
+      <%= form.label :event_date, "Event date:" %>
+      <%= form.datetime_field :expiration_date %>
+      <%= form.hidden_field :reward_id, value: @reward_id %>
+      <%= form.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "static_files/bottom_nav" %>
