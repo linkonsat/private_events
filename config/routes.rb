@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :user
   resources :event_attendees
   resources :event_invites
+  resources :promo_codes
+  get '/promo_code', to: 'promo_code#generate_code'
   get '/events/event_actions', to: 'events#event_actions'
   get 'events/attended_events', to: 'events#attended_events'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
