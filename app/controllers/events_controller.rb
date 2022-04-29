@@ -37,6 +37,8 @@ class EventsController < ApplicationController
     @event_invite = EventInvite.new
     @current_user = User.find(current_user.id)
     @reward_id = @current_user.reward.id
+    @promo_codes = @current_user.reward.promo_codes
+    puts @promo_codes
     code = PromoCode.generate_promo_code
     response.headers['code'] = code.as_json
   end

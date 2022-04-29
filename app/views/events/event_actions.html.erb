@@ -42,6 +42,20 @@
       <%= form.submit %>
       </div>
       <% end %>
+      <h2>
+      Generated codes
+      </h2>
+      <% @promo_codes.each do |promo_code| %>
+        <div>
+        Code: <%= promo_code.code %>
+        </div>
+        <div>
+        Value: <%= promo_code.value_off %>%
+        </div>
+        <div>
+        Expiration_date: <%= promo_code.expiration_date %>
+        </div>
+        <% end %>
     </div>
   </div>
 </div>
