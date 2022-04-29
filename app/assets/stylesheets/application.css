@@ -252,6 +252,11 @@ html {
     box-shadow:5px 3px 3px black;
 }
 
+.user_edit {
+    border-bottom: double 2px red;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
 .link_style {
     background-color: rgb(180, 180, 180)    ;
     text-decoration-color: rgb(1, 10, 10);

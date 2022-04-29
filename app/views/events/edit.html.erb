@@ -1,21 +1,21 @@
 <%= render "static_files/top_nav" %>
 <div class="main_body_container">
-<div class="event_options">
+<div class="new_event_container">
 
 <%= form_with model: @event do |form| %>
     <div>
     <%= form.label :name %>
     <%= form.text_field :name, :value => @event.name %>
     </div>
-    <div>
+    <div class="event_choice">
     <%= form.label :description %>
     <%= form.text_field :description, :value => @event.description %>
     </div>
-    <div>
+    <div class="event_choice">
     <%= form.label :event_date %>
     <%= form.datetime_field :event_date, :value => @event.event_date %>
     </div>
-    <div>
+    <div class="event_choice">
     <%= form.label :event_end_date %>    
     <%= form.datetime_field :event_end_date, :value => @event.event_end_date %>
     </div>
@@ -25,34 +25,28 @@
         <div>
         Guest count: <%= option_form.number_field :maximum_guests, in: 1..10000 %>
         </div>
-    <div>
+    <div class="event_choice">
         <%= option_form.radio_button(:private, true) %>
         <%= label_tag(:private?, "Private event") %>
         </div>
-    <div>
+    <div class="event_choice">
         <%= option_form.radio_button(:private,false) %>
         <%= label_tag(:private, "Public event.") %>
         </div>
-    <div>
+    <div class="event_choice">
         <%= option_form.radio_button(:reoccuring, true) %>
         <%= label_tag(:reoccuring?, "Reoccuring event.") %>
         </div>
-    <div>
+    <div class="event_choice">
         <%= option_form.radio_button(:reoccuring, false) %>
         <%= label_tag(:reoccuring?, "Non-reoccuring event.") %>
         <% end %>
         </div>
-        <div>
+        <div class="event_choice">
         <%= form.submit %>
         </div>
     <% end %>
-    <%= form_with model: @event_invite do |form| %>
-        <%= form.collection_select :invitee_id, User.order(:email), :id, :email %>
-        <%= form.hidden_field :event_id, value: @event.id %>
-        <%= form.hidden_field :creator_id, value: @event.user.id %>
-        <%= form.hidden_field :accepted, value: "false" %>
-        <%= form.submit %>
-        <% end %>
+
 <%= render "static_files/guest_list" %>
 <%= render "static_files/invitee_list", locals = {:event_invite => @event_invite, :event => @event} %>
 
