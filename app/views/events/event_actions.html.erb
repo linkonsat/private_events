@@ -20,22 +20,27 @@
     </div>
     </div>
     <div class="event_promo_codes" id="promo_code" data-tab-target="tab" data-controller="promo-code">
-      <div>
         <div data-action="click->promo-code#generate_code">
-        test
+        Generate code
         </div>
-      </div>
-      <%= form_with model: @promocode do |form| %>
+      <%= form_with url: new_promo_code_path, method: :get do |form| %>
+      <div>
       <%= form.label :code, "Code" %>
       <%= form.text_field :code %>
       <div data-promo-code-target="promoCode">
       </div>  
-      <%= form.label :value_off, "Discount",  data: { promo_code_target: 'promoCode' }%>
+      <div>
+      <%= form.label :value_off, "Discount" %>
+      <%= form.number_field :value_off, in: 1..100 %>
+      </div>
+      <div>
       <%= form.label :expiration_date, "Expiration date" %>
-      <%= form.label :event_date, "Event date:" %>
       <%= form.datetime_field :expiration_date %>
+      </div>
       <%= form.hidden_field :reward_id, value: @reward_id %>
+      <div>
       <%= form.submit %>
+      </div>
       <% end %>
     </div>
   </div>

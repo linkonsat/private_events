@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :user
   resources :event_attendees
   resources :event_invites
-  resources :promo_codes
+  resources :promo_code
   get '/promo_code', to: 'promo_code#generate_code'
   get '/events/event_actions', to: 'events#event_actions'
   get 'events/attended_events', to: 'events#attended_events'
