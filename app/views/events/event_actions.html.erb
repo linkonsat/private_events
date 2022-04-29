@@ -8,8 +8,8 @@
         Promo codes
       </div>
    </div>
-    <div class="advanced_option_table" id ="event_invite" data-tab-target="tab">
-     <div class="event_invite_table">
+    <div class="event_invite_table" id ="event_invite" data-tab-target="tab">
+      <div>
        <%= form_with model: @event_invite do |form| %>
         <%= form.collection_select :invitee_id, User.order(:email), :id, :email %>
         <%= form.hidden_field :event_id, value: @event.id %>
