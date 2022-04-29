@@ -46,14 +46,19 @@ html {
 }
 
 .event_invite_table  {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .event_promo_codes {
-    display: none;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .main_container {
-    height: 75%;
+    height: 75%;    
     background-color: whitesmoke;
 }
 
@@ -61,7 +66,7 @@ html {
     display: flex;
     justify-content: space-evenly;
     height: 12.5%;
-    background-color: skyblue;
+    background-color: #f07f5e;
     color: black;
     border-bottom: solid;
     align-items: center;
@@ -70,7 +75,7 @@ html {
 .bottom_nav_bar {
     display: flex;
     justify-content: space-evenly;
-    background-color: skyblue;
+    background-color: #f07f5e;
     color: black;
     border-top: solid;
     align-items: center;
