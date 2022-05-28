@@ -9,3 +9,6 @@ application.register("promo-code", PromoCodeController)
 
 import TabController from "./tab_controller.js"
 application.register("tab", TabController)
+
+import WeatherAppController from "./weather_app_controller.js"
+application.register("weather-app", WeatherAppController)
