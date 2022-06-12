@@ -2,6 +2,7 @@
 
 class EventsController < ApplicationController
   def index
+    debugger
     @events = Event.all
     @past_events = Event.past_events_spotlight
     @future_events = Event.future_events_spotlight
