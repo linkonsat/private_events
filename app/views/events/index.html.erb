@@ -1,4 +1,6 @@
 <%= render "static_files/top_nav" %>
+<div id="side_bar">
+</div>
 <div class="main_container">
 <div class="event_options">
   <% if user_signed_in? %>
@@ -40,7 +42,15 @@ No future events found! Why not start a party and create your own! <%= link_to "
     <div>
       <%= button_to "Sign Up", new_event_attendee_path, params: { attendee_id: current_user, event_id: event.id } %>
     </div>
+    <div data-controller="drop-down">
+      <div data-action="click->drop-down#reveal">
+        Description ⬇
+      <div class="description">
+        <%= event.description %>
+      </div>
+      </div>
     </div>
+
     <% else %>
     <div class="all_events_container">
     <div>
@@ -55,8 +65,17 @@ No future events found! Why not start a party and create your own! <%= link_to "
     <div> 
       Not currently accepting public sign ups!
     </div>
+    <div data-controller="drop-down" data-action="click->drop-down#reveal">
+      <div data-action="click->drop-down#reveal">
+        Description ⬇
+      <div class="description">
+        <%= event.description %>
+      </div>
+      </div>
+    </div>
     </div>
     <% end %>
+    </div>
     </div>
     <% end %>
 <% end %>

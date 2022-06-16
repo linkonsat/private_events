@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import DropDownController from "./drop_down_controller.js"
+application.register("drop-down", DropDownController)
+
 import PromoCodeController from "./promo_code_controller.js"
 application.register("promo-code", PromoCodeController)
 
