@@ -34,7 +34,7 @@ No future events found! Why not start a party and create your own! <%= link_to "
       Public event: <%= event.name %>
     </div>
     <div>
-      Starts at: <%= event.event_date.to_datetime.strftime('%y-%m-%d-%r') %>
+      Starts at: <%= event.event_date.to_datetime.strftime('%m-%d-%y %r') %>
     </div>
     <div>
       Ends at <%= event.event_end_date.to_datetime.strftime('%y-%m-%d-%r') %>
@@ -43,7 +43,7 @@ No future events found! Why not start a party and create your own! <%= link_to "
       <%= button_to "Sign Up", new_event_attendee_path, params: { attendee_id: current_user, event_id: event.id } %>
     </div>
     <div data-controller="drop-down">
-      <div data-action="click->drop-down#reveal">
+      <div data-action="click->drop-down#reveal" class="description_button">
         Description ⬇
       <div class="description">
         <%= event.description %>
@@ -66,7 +66,7 @@ No future events found! Why not start a party and create your own! <%= link_to "
       Not currently accepting public sign ups!
     </div>
     <div data-controller="drop-down" data-action="click->drop-down#reveal">
-      <div data-action="click->drop-down#reveal">
+      <div data-action="click->drop-down#reveal" class="description_button">
         Description ⬇
       <div class="description">
         <%= event.description %>
