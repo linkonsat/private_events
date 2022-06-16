@@ -45,6 +45,16 @@ html {
     background-color: grey;
 }
 
+.description {
+    display: none;
+    animation-duration: 2s;
+    animation-name: fadein;
+}
+
+.description_button {
+    cursor: pointer;
+}
+
 .event_invite_table  {
     display: flex;
     align-items: center;
@@ -202,9 +212,7 @@ html {
     grid-template-rows: 1fr 1fr;
 }
 
-@keyframes unlock {
 
-}
 .main_home_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
