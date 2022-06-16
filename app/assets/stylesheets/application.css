@@ -58,7 +58,7 @@ html {
     flex-direction: column;
 }
 .main_container {
-    height: 75%;    
+    min-height: 75%;    
     background-color: whitesmoke;
 }
 
@@ -79,7 +79,7 @@ html {
     color: black;
     border-top: solid;
     align-items: center;
-    height: 12.5%;
+    min-height: 12.5%;
  }
 
  .center_alignment {
@@ -194,7 +194,7 @@ html {
 }
 .main_home_container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     align-items: center;
     background-color: whitesmoke;
@@ -202,6 +202,12 @@ html {
     animation-duration: 2s;
     animation-name: slidein;
 }
+
+@media screen and (max-width: 600px) {
+    .all_events_container {
+       width: 80%;
+    }
+ }
 
 .attended_events_container {
     display: grid;
