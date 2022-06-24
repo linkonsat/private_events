@@ -38,12 +38,7 @@ After that you can clone this repository by running.
  
  ### Lessons Learned
  1. Learned how to use active record associations to connect multiple model objects.
- 2. How to utilize these associations to create private events.
- 
- ### Roadmap 
- 
- 1. Add styling for current pages.
- 2. Add system tests to start testing.
- 3. Allow users to edit and delete the events they created.
- 4. Allow users to remove themselves as an attendee to their “attended_events”.
- 5. Make each event private and add the functionality for the event creator to invite specific users to an event.
+ 2. How to utilize these associations to retrieve specific information about users.
+ 3. How to use a relational database such as PostgreSQL to store records and build associations.
+ 4. How to use RSpec to create unit tests for models.
+ 5. How to use CSS animations and stylings to add flare to the user facing portion.

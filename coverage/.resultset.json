@@ -1,9 +1,19 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/macdaniel/Documents/private_events/spec/mailers/event_update_mailer_spec.rb": {
+      "/home/macdaniel/Documents/private_events/spec/helpers/promo_code_helper_spec.rb": {
         "lines": [
           1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           1,
           1,
@@ -13,6 +23,8 @@
       "/home/macdaniel/Documents/private_events/spec/rails_helper.rb": {
         "lines": [
           null,
+          null,
+          null,
           1,
           1,
           1,
@@ -55,6 +67,7 @@
           null,
           null,
           null,
+          1,
           null,
           null,
           null,
@@ -81,6 +94,8 @@
       "/home/macdaniel/Documents/private_events/config/environment.rb": {
         "lines": [
           null,
+          null,
+          null,
           1,
           null,
           null,
@@ -89,6 +104,8 @@
       },
       "/home/macdaniel/Documents/private_events/config/application.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -115,6 +132,8 @@
       },
       "/home/macdaniel/Documents/private_events/config/boot.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -123,6 +142,8 @@
       },
       "/home/macdaniel/Documents/private_events/config/environments/test.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -190,6 +211,8 @@
           null,
           null,
           null,
+          null,
+          null,
           1,
           null,
           null,
@@ -203,6 +226,7 @@
       },
       "/home/macdaniel/Documents/private_events/config/initializers/content_security_policy.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
@@ -551,6 +575,8 @@
           null,
           null,
           null,
+          null,
+          null,
           1,
           null,
           null
@@ -558,6 +584,7 @@
       },
       "/home/macdaniel/Documents/private_events/config/initializers/inflections.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
@@ -588,20 +615,57 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/home/macdaniel/Documents/private_events/spec/factories/admins.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/spec/factories/event.rb": {
+        "lines": [
+          1,
+          1,
+          5,
+          5,
+          null,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/spec/factories/event_tags.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/spec/factories/user.rb": {
+        "lines": [
+          1,
+          1,
+          5,
+          5,
+          5,
           null,
           null
         ]
       },
       "/home/macdaniel/Documents/private_events/config/routes.rb": {
         "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -626,6 +690,8 @@
       },
       "/home/macdaniel/Documents/private_events/app/models/admin.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -636,6 +702,8 @@
       },
       "/home/macdaniel/Documents/private_events/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
@@ -643,66 +711,94 @@
       },
       "/home/macdaniel/Documents/private_events/app/models/user.rb": {
         "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           1,
           null,
           null,
           1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          0,
           null,
           null
         ]
       },
       "/home/macdaniel/Documents/private_events/app/helpers/application_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/home/macdaniel/Documents/private_events/app/helpers/event_attendees_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/home/macdaniel/Documents/private_events/app/helpers/event_invites_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/home/macdaniel/Documents/private_events/app/helpers/events_helper.rb": {
         "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/app/helpers/promo_code_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/spec/support/factory_bot.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/spec/mailers/event_update_mailer_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
           1,
           null
         ]
       },
       "/home/macdaniel/Documents/private_events/app/mailers/event_update_mailer.rb": {
         "lines": [
-          1,
-          1,
-          0,
-          0,
-          0,
           null,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
           null,
           null
         ]
       },
       "/home/macdaniel/Documents/private_events/app/mailers/application_mailer.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -711,6 +807,8 @@
       },
       "/home/macdaniel/Documents/private_events/spec/models/admin_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -718,8 +816,183 @@
           null
         ]
       },
+      "/home/macdaniel/Documents/private_events/spec/models/event_attendee_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/app/models/event_attendee.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          2,
+          null,
+          1,
+          3,
+          3,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/spec/models/event_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/app/models/event.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/spec/models/event_tag_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/app/models/event_tag.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/spec/models/promo_code_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/app/models/promo_code.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          2,
+          null,
+          1,
+          1,
+          1,
+          6,
+          6,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/macdaniel/Documents/private_events/spec/requests/promo_code_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/home/macdaniel/Documents/private_events/spec/sidekiq/email_worker_job_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -728,25 +1001,21 @@
       },
       "/home/macdaniel/Documents/private_events/app/sidekiq/email_worker_job.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
           1,
-          null,
-          null,
           0,
           0,
-          null,
           0,
-          0,
-          null,
-          null,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1646239693
+    "timestamp": 1652541423
   }
 }
