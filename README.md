@@ -38,7 +38,8 @@ After that you can clone this repository by running.
  
  ### Lessons Learned
  1. Learned how to use active record associations to connect multiple model objects.
- 2. How to utilize these associations to retrieve specific information about users.
+ 2. How to utilize these associations to retrieve specific information from another model object.
  3. How to use a relational database such as PostgreSQL to store records and build associations.
  4. How to use RSpec to create unit tests for models.
  5. How to use CSS animations and stylings to add flare to the user facing portion.
+ 6. How to use Sidekiq to make an application scaleable and able to handle large requests from the front-end.

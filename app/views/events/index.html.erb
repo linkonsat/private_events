@@ -39,9 +39,15 @@ No future events found! Why not start a party and create your own! <%= link_to "
     <div>
       Ends at <%= event.event_end_date.to_datetime.strftime('%y-%m-%d-%r') %>
     </div>
-    <div>
-      <%= button_to "Sign Up", new_event_attendee_path, params: { attendee_id: current_user, event_id: event.id } %>
-    </div>
+    <% if current_user.nil? %>
+      <div>
+        Log in to sign up!
+      </div>
+    <% else %>
+      <div>
+        <%= button_to "Sign Up", new_event_attendee_path, params: { attendee_id: current_user, event_id: event.id } %>
+      </div>
+    <% end %>
     <div data-controller="drop-down">
       <div data-action="click->drop-down#reveal" class="description_button">
         Description ⬇
@@ -62,9 +68,15 @@ No future events found! Why not start a party and create your own! <%= link_to "
     <div>
       Ends at <%= event.event_end_date.to_datetime.strftime('%y-%m-%d-%r') %>
     </div>
-    <div> 
-      Not currently accepting public sign ups!
-    </div>
+    <% if current_user.nil? %>]
+      <div>
+        Log in to sign up!
+      </div>
+    <% else %>
+      <div>
+        Not currently accepting sign ups!
+      </div>
+    <% end %>
     <div data-controller="drop-down" data-action="click->drop-down#reveal">
       <div data-action="click->drop-down#reveal" class="description_button">
         Description ⬇
