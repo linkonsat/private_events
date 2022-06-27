@@ -7,6 +7,7 @@ class Event < ApplicationRecord
   has_one :event_option, dependent: :destroy
   belongs_to :user
   accepts_nested_attributes_for :event_option, :event_tags
+  validates :name, :description, :creator, :event_date, :event_end_date, presence: true
   scope :future_events, -> { where('event_end_date > ?', Time.zone.now) }
   scope :past_events, -> { where('event_end_date < ?', Time.zone.now) }
   scope :future_events_spotlight, -> { where('event_end_date > ?', Time.zone.now).limit(5) }

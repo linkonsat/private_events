@@ -1,6 +1,9 @@
 <%= render "static_files/top_nav" %>
 <div class="main_body_container">
   <div class="new_event_container">
+  <% flash.each do |msg| -%>
+    <%= content_tag :div, msg[1]  %> 
+  <% end %>
 <%= form_with model: @event do |form| %>
   <h1 class="new_event_heading">
   Event Options.
