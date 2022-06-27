@@ -44,9 +44,15 @@ No future events found! Why not start a party and create your own! <%= link_to "
         Log in to sign up!
       </div>
     <% else %>
-      <div>
-        <%= button_to "Sign Up", new_event_attendee_path, params: { attendee_id: current_user, event_id: event.id } %>
-      </div>
+      <% if event.attendees.where("email = ?", current_user.email).empty? %>
+        <div>
+          <%= button_to "Sign Up", new_event_attendee_path, params: { attendee_id: current_user, event_id: event.id } %>
+        </div>
+      <% else %>
+        <div>
+          You already signed up!
+        </div>
+      <% end %>
     <% end %>
     <div data-controller="drop-down">
       <div data-action="click->drop-down#reveal" class="description_button">
