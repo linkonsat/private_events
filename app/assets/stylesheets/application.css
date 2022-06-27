@@ -152,6 +152,7 @@ html {
     overflow: auto; 
     border: ridge 3px red;
     box-shadow:5px 3px 3px black;
+    color: black;
 }
 
 .event_options {

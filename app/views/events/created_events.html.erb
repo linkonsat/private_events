@@ -7,24 +7,30 @@ Select a event to edit event details.
 </h3>
 </div>
 <div class="created_event">
-<% @created_events.each do |event| %>
+<% if @created_events.empty? %>
+  <div class="center_alignment">
+    No events created!
+  </div> 
+<% else %>
+  <% @created_events.each do |event| %>
     <div class="center_alignment">
-    <div>
-    Name: <%= event.name %>
+      <div>
+        Name: <%= event.name %>
+      </div>
+      <div>
+        Description: <%= event.description %>
+      </div>
+      <div>
+        <%= link_to "Edit", edit_event_path(event) %>  
+      </div>
+      <div>
+        <%= link_to "Advanced Actions",  events_event_actions_path(event) %>
+      <div>
+        <%= button_to "Delete", event_path(event), method: :delete %>
+      </div>
     </div>
-    <div>
-    Description: <%= event.description %>
-    </div>
-    <div>
-    <%= link_to "Edit", edit_event_path(event) %>  
-    </div>
-    <div>
-    <%= link_to "Advanced Actions",  events_event_actions_path(event) %>
-    <div>
-    <%= button_to "Delete", event_path(event), method: :delete %>
-    </div>
-    </div>
-    <% end %> 
+  <% end %> 
+<% end %>
 </div>
 </div>
 
