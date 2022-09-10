@@ -45,90 +45,6 @@ html {
     background-color: grey;
 }
 
-.description {
-    display: none;
-    animation-duration: 2s;
-    animation-name: fadein;
-}
-
-.description_button {
-    cursor: pointer;
-}
-
-.event_invite_table  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.event_promo_codes {
-    display: none; 
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.main_container {
-    min-height: 75%;    
-    background-color: whitesmoke;
-}
-
-.top_nav_bar {
-    display: flex;
-    justify-content: space-evenly;
-    height: 12.5%;
-    background-color: grey;
-    color: black;
-    border-bottom: solid;
-    align-items: center;
- }
-
-.bottom_nav_bar {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: grey;
-    color: black;
-    border-top: solid;
-    align-items: center;
-    min-height: 12.5%;
- }
-
- .center_alignment {
-     display: flex;
-     height: 100%;
-     justify-content: space-around;
-     flex-direction: column;
- }
-
-.main_body_container {
-    display: flex; 
-    flex-direction: row;
-    height: 75%;
-    background-color: skyblue;
-}
-.all_events_container {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    max-width: 400px;
-    align-self: center;
-    height: 100%;
-    overflow: auto;
-    margin-top: 25px;
-    border-style: ridge ;
-    padding: 5px;
-}
-
-.main_body_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: whitesmoke;
-}
-.new_event_container {
-    height: 65%;
-    border: ridge 3px red;
-    box-shadow:5px 3px 3px black;
-}
 .all_events_container {
     min-width: 50%;
     height: 50%;
@@ -146,6 +62,121 @@ html {
     overflow: auto;
 }
 
+.all_events_container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    max-width: 400px;
+    align-self: center;
+    height: 100%;
+    overflow: auto;
+    margin-top: 25px;
+    border-style: ridge ;
+    padding: 5px;
+}
+
+.attended_events_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: whitesmoke;
+    height: 85%;
+    
+}
+
+.attended_events {
+    height: 100%;
+    overflow: auto;
+}
+
+.bottom_nav_bar {
+    display: grid;
+    grid-template-rows: 3% 95%;
+    justify-content: space-evenly;
+    background-color: beige;
+    color: black;
+    align-items: center;
+    height: 100%;
+ }
+
+ .center_alignment {
+     display: flex;
+     height: 100%;
+     justify-content: space-around;
+     flex-direction: column;
+ }
+
+.description {
+    display: none;
+    animation-duration: 2s;
+    animation-name: fadein;
+}
+
+.description_button {
+    cursor: pointer;
+}
+
+.event_invite_table  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event_options {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    height: 45px;
+}
+
+.event_promo_codes {
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.main_container {
+    min-height: 100%;    
+    background-color: #9dbeb7;
+    color: white;
+    border: thick;
+    border-color: blue;
+}
+
+.main_body_container {
+    display: flex; 
+    flex-direction: row;
+    height: 75%;
+    background-color: skyblue;
+}
+
+
+.main_body_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+.new_event_container {
+    height: 65%;
+    border: ridge 3px red;
+    box-shadow:5px 3px 3px black;
+}
+
+.title {
+    font-style: italic;
+    height: 10%;
+}
+
+.top_nav_bar {
+    display: flex;
+    justify-content: space-evenly;
+    height: 12.5%;
+    background-color: #FF7276;
+    color: black;
+    align-items: center;
+ }
+
 .created_event {
     width: 150px;
     height: 150px;
@@ -155,13 +186,12 @@ html {
     color: black;
 }
 
-.event_options {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    height: 45px;
-    background-color: whitesmoke;
+.default_layout {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height:100%;
 }
+
 
 .guest_list {
     overflow: auto;
@@ -191,10 +221,6 @@ html {
     padding: 5px;
 }
 
-.attended_events {
-    height: 100%;
-    overflow: auto;
-}
 @keyframes fadein {
     from {
         opacity: 0;
@@ -219,7 +245,6 @@ html {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     align-items: center;
-    background-color: whitesmoke;
     height: 100%;
     animation-duration: 2s;
     animation-name: slidein;
@@ -232,18 +257,7 @@ html {
     }
  }
 
-.attended_events_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    background-color: whitesmoke;
-    height: 85%;
-    
-}
-
-
 .slide_in_header {
-    background-color: whitesmoke;
     animation-duration: 2s;
     animation-name: slidein;
     text-align: center;
