@@ -100,6 +100,11 @@ html {
     height: 100%;
  }
 
+ .button_style {
+    box-shadow:5px 3px 3px black;
+}
+
+
  .center_alignment {
      display: flex;
      height: 100%;
@@ -137,6 +142,13 @@ html {
     margin: auto;
     margin-bottom: 5px;
 }
+
+.event_choice {
+    margin-top: 10px;
+    border-top: groove 2px red;
+    padding: 5px;
+}
+
 
 .event_invite_table  {
     display: flex;
@@ -185,6 +197,16 @@ html {
     overflow: auto;
     height: 100%;
 }
+
+.link_style {
+    background-color: rgb(180, 180, 180)    ;
+    text-decoration-color: rgb(1, 10, 10);
+    border-color: black;
+    border: solid 1px;
+    padding: 3px;
+    box-shadow:5px 3px 3px black;
+}
+
 
 .main_container {
     min-height: 100%;    
@@ -235,10 +257,44 @@ html {
     line-height: 1.5em;
 }
 
+.panel_link:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+.registration_display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: whitesmoke;
+    border: ridge 3px red;
+    box-shadow:5px 3px 3px black;
+}
+
+
+
+
+.remember_me_link {
+    margin: auto;
+    margin-left: 10%;
+}
+
 .side_panel {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.sign_in {
+    border: groove;
+    padding: 15px;
+}
+
+
+.slide_in_header {
+    animation-duration: 2s;
+    animation-name: slidein;
+    text-align: center;
 }
 
 .title {
@@ -257,6 +313,13 @@ html {
     align-items: center;
  }
 
+ .user_edit {
+    border-bottom: double 2px red;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+
 @keyframes fadein {
     from {
         opacity: 0;
@@ -272,12 +335,6 @@ html {
     }
  }
 
-.slide_in_header {
-    animation-duration: 2s;
-    animation-name: slidein;
-    text-align: center;
-}
-
 @keyframes slidein {
     from {
         margin-left: 100%;
@@ -289,50 +346,4 @@ html {
     }
 }
 
-.sign_in {
-    border: groove;
-    padding: 15px;
-}
 
-.event_choice {
-    margin-top: 10px;
-    border-top: groove 2px red;
-    padding: 5px;
-}
-
-.registration_display {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: whitesmoke;
-    border: ridge 3px red;
-    box-shadow:5px 3px 3px black;
-}
-
-.user_edit {
-    border-bottom: double 2px red;
-    margin-top: 3px;
-    margin-bottom: 3px;
-}
-.link_style {
-    background-color: rgb(180, 180, 180)    ;
-    text-decoration-color: rgb(1, 10, 10);
-    border-color: black;
-    border: solid 1px;
-    padding: 3px;
-    box-shadow:5px 3px 3px black;
-}
-
-.button_style {
-    box-shadow:5px 3px 3px black;
-}
-
-.remember_me_link {
-    margin: auto;
-    margin-left: 10%;
-}
-
-.panel_link:hover {
-    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  }
