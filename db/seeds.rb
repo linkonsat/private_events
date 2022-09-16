@@ -13,9 +13,9 @@ reward_user_count = 0
 100.times do
   user_count += 1
   User.create!(user_name: "test user#{user_count}", bio: 'test user', email: "#{user_count}test@gmail.com",
-               password: "123456")
+               password: '123456')
 end
-100.times do 
+100.times do
   reward_user_count += 1
   Reward.create!(user_id: reward_user_count)
 end

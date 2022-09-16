@@ -32,4 +32,3 @@ class Event < ApplicationRecord
     privated_events
   end
 end
-

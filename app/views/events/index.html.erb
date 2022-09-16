@@ -24,21 +24,21 @@
 Featured Events
 </h2>
 <div class="main_home_container">
-<% if @future_events.empty? %>
-<p>
-No future events found! Why not start a party and create your own! <%= link_to "create new event", url = "events/new" %> 
-</p>
-<% else %>
-<% @future_events.each do |event| %>
-  <div>
-  <% if event.event_option.private == false %>
-  <div class="all_events_container">
-    <div>
-      Public event: <%= event.name %>
-    </div>
-    <div>
-      Starts at: <%= event.event_date.to_datetime.strftime('%m-%d-%y %r') %>
-    </div>
+  <% if @future_events.empty? %>
+    <p>
+      No future events found! Why not start a party and create your own! <%= link_to "create new event", url = "events/new" %> 
+    </p>
+  <% else %>
+    <% @future_events.each do |event| %>
+      <div>
+        <% if event.event_option.private == false %>
+          <div class="all_events_container">
+            <div>
+              Public event: <%= event.name %>
+            </div>
+            <div>
+              Starts at: <%= event.event_date.to_datetime.strftime('%m-%d-%y %r') %>
+            </div>
     <div>
       Ends at <%= event.event_end_date.to_datetime.strftime('%y-%m-%d-%r') %>
     </div>

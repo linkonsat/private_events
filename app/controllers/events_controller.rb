@@ -32,7 +32,7 @@ class EventsController < ApplicationController
     @event = Event.all
   end
 
-  def event_actions 
+  def event_actions
     @event = Event.find(params[:format])
     @event_invite = EventInvite.new
     @current_user = User.find(current_user.id)
