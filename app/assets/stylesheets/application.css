@@ -240,7 +240,8 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: #9dbeb7;
+    height: 100%;
 }
 
 .main_home_container {
@@ -280,6 +281,8 @@ html {
     background-color: whitesmoke;
     border: ridge 3px red;
     box-shadow:5px 3px 3px black;
+    width: 300px;
+    height: 400px;
 }
 
 
