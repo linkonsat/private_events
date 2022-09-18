@@ -45,14 +45,6 @@ html {
     background-color: grey;
 }
 
-.all_events_container {
-    min-width: 50%;
-    height: 50%;
-    overflow: auto; 
-    border: ridge 3px red;
-    box-shadow:5px 3px 3px black;
-}
-
 .all_created_events {
     display: flex;
     justify-content: flex-start;
@@ -64,15 +56,20 @@ html {
 
 .all_events_container {
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
+    justify-content: space-evenly;
+    flex-direction: row;
     max-width: 400px;
     align-self: center;
-    height: 100%;
     overflow: auto;
     margin-top: 25px;
     border-style: ridge ;
     padding: 5px;
+    min-width: 50%;
+    height: 100px;
+    overflow: auto; 
+    border: ridge 3px red;
+    box-shadow:5px 3px 3px black;
+    gap: 10px;
 }
 
 .attended_events_container {
@@ -128,7 +125,7 @@ html {
 }
 
 .description {
-    display: none;
+    display: block;
     animation-duration: 2s;
     animation-name: fadein;
 }
@@ -141,6 +138,12 @@ html {
     width: 30%;
     margin: auto;
     margin-bottom: 5px;
+}
+
+.event_box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .event_choice {
@@ -172,6 +175,11 @@ html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.event_title_name {
+    color: black;
+    font-weight: bold;
 }
 
 .fade_in_content {
@@ -215,7 +223,7 @@ html {
 .main_container {
     min-height: 100%;    
     background-color: #9dbeb7;
-    color: white;
+    color: black;
     border: thick;
     border-color: blue;
 }
@@ -239,7 +247,7 @@ html {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     align-items: center;
-    height: 100%;
+    height: 700px;
     animation-duration: 2s;
     animation-name: slidein;
     justify-items: center;
