@@ -6,10 +6,10 @@ export default class extends Controller {
   reveal(event) {
     let targetElements = event.srcElement.childNodes
     let targetStyle = targetElements[1].style.display 
-    if(targetStyle == "none" || targetStyle == "") {
-      targetElements[1].style.display = "block"
-    } else {
+    if(targetStyle == "block" || targetStyle == "") {
       targetElements[1].style.display = "none"
+    } else {
+      targetElements[1].style.display = "block"
     }
   }
 }
