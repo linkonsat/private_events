@@ -11,13 +11,21 @@
     </div>
     <div class="side_panel">
       <div class="panel_link">
-        Featured events.
+      <%= link_to "Featured events", url = '/' %>
       </div>
       <div class="panel_link">
-        Created events.
+        <% if current_user.nil? %>
+          <%= link_to "Created events", url = '/users/sign_in' %>
+        <% else %>
+          <%= link_to "View created events", url = 'events/created_events' %>
+        <% end %>
       </div>    
       <div class="panel_link">
-        Upcoming Events.
+        <% if current_user.nil? %>
+          <%= link_to "Created events", url = '/users/sign_in' %>
+        <% else %>
+          <%= link_to "View created events", url = 'events/attended_events' %>
+        <% end %>
       </div>
     </div>
 </div>
