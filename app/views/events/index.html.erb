@@ -2,24 +2,7 @@
   <%= render "static_files/bottom_nav" %>
     <div>
       <%= render "static_files/top_nav" %>
-        <div id="side_bar">
-        </div>
       <div class="main_container">
-        <div class="event_options">
-          <% if user_signed_in? %>
-            <div class="link_style">
-              <%= link_to "create new event", url = "events/new" %> 
-            </div>
-         <% end %>
-    <% if user_signed_in? %>
-      <div class="link_style">
-        <%= link_to "View registered events", url = 'events/attended_events' %>
-      </div>
-      <div class="link_style">
-        <%= link_to "View created events", url = 'events/created_events' %>
-      </div>
-    <% end %>
-  </div>
   <h2 class="slide_in_header">
 Featured Events
 </h2>
