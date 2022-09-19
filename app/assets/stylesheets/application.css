@@ -186,6 +186,7 @@ html {
     justify-content: space-evenly;
     animation-duration: 2s;
     animation-name: fadein;
+    background-color: #9dbeb7;
 }
 
 .fade_in_event {

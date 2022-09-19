@@ -8,15 +8,15 @@
 <div class="event_options">
   <% if user_signed_in? %>
     <div class="link_style">
-      <%= link_to "create new event", url = "events/new" %> 
+      <%= link_to "create new event", url = "/events/new" %> 
     </div>
   <% end %>
     <% if user_signed_in? %>
       <div class="link_style">
-        <%= link_to "View registered events", url = 'events/attended_events' %>
+        <%= link_to "View registered events", url = '/events/attended_events' %>
       </div>
       <div class="link_style">
-        <%= link_to "View created events", url = 'created_events' %>
+        <%= link_to "View created events", url = '/events/created_events' %>
       </div>
     <% end %>
   </div>
