@@ -9,23 +9,38 @@
         </div>
       </h2>
     </div>
-    <div class="side_panel">
-      <div class="panel_link">
-      <%= link_to "Featured events", url = '/' %>
+    <div class="side_panel_alignment">
+      <div>
+        <div class="side_panel">
+          <div class="panel_link">
+            <%= link_to "Featured events", url = '/' %>
+          </div>
+          <div class="panel_link">
+            <% if current_user.nil? %>
+              <%= link_to "Created events", url = '/users/sign_in' %>
+            <% else %>
+              <%= link_to "View created events", url = '/events/created_events' %>
+            <% end %>
+          </div>    
+          <div class="panel_link">
+            <% if current_user.nil? %>
+              <%= link_to "Created events", url = '/users/sign_in' %>
+            <% else %>
+              <%= link_to "View registered events", url = '/events/attended_events' %>
+            <% end %>
+          </div>
+        </div>
       </div>
-      <div class="panel_link">
-        <% if current_user.nil? %>
-          <%= link_to "Created events", url = '/users/sign_in' %>
-        <% else %>
-          <%= link_to "View created events", url = '/events/created_events' %>
-        <% end %>
-      </div>    
-      <div class="panel_link">
-        <% if current_user.nil? %>
-          <%= link_to "Created events", url = '/users/sign_in' %>
-        <% else %>
-          <%= link_to "View registered events", url = '/events/attended_events' %>
-        <% end %>
+          <div> 
+            Created by <p> MacDaniel Maisel </p>
+            <div>
+            <div> 
+              <a href="https://github.com/linkonsat">Github |</a> 
+              <a href="https://twitter.com/MaiselMacdanie1"> Twitter | </a>
+              <a href="https://www.linkedin.com/in/macdaniel-maisel/">Linkedln </a>
+          
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-</div>

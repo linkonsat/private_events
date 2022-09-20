@@ -96,7 +96,7 @@ h3 {
 
 .bottom_nav_bar {
     display: grid;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 9% 90%;
     grid-template-columns: 100%;
     justify-content: space-evenly;
     background-color: beige;
@@ -275,6 +275,7 @@ h3 {
     height: 25px;
     text-align: center;
     line-height: 1.5em;
+    align-self: start;
 }
 
 .panel_link:hover {
@@ -306,6 +307,14 @@ h3 {
     justify-content: center;
     flex-direction: column;
     margin-top: 1.5em;
+    height: 100%;
+}
+
+.side_panel_alignment {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .sign_in {
