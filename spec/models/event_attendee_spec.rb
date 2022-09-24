@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe EventAttendee, type: :model do
   it 'Does not allow multiple signups from the same user' do
     user = create(:user)
-    event = create(:event)
+    event = create(:event, name: "new event", description: "a cool event.", creator: "bill", event_end_date: DateTime.new(2101, 2, 3.5), event_date: DateTime.new(2001, 2, 3.5))
     new_attendee = EventAttendee.create!(id: 1, attendee_id: user.id, event_id: event.id,
                                          created_at: Time.now, updated_at: Time.now)
     confirm_attendee = new_attendee.save
@@ -13,7 +13,7 @@ RSpec.describe EventAttendee, type: :model do
   end
   it 'Model scope method returns a signed up event user' do
     user = create(:user)
-    event = create(:event)
+    event = create(:event, name: "new event", description: "a cool event.", creator: "bill", event_end_date: DateTime.new(2101, 2, 3.5), event_date: DateTime.new(2001, 2, 3.5))
     new_attendee = EventAttendee.create!(id: 1, attendee_id: user.id, event_id: event.id,
                                          created_at: Time.now, updated_at: Time.now)
     params_hash = { event_id: event.id, attendee_id: user.id }
