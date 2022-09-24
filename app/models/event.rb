@@ -31,4 +31,15 @@ class Event < ApplicationRecord
     end
     privated_events
   end
+
+  def self.keyword_events(keyword)
+    events = Event.all 
+    keyworded_events = []
+    events.each do |event|
+      if(event.description.include?(keyword) || event.name.include?(keyword))
+        keyworded_events.push(event)
+      end
+    end
+    return keyworded_events
+  end 
 end

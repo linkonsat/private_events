@@ -262,6 +262,10 @@ h3 {
     justify-items: center;
 }
 
+.media_links {
+    align-self: center;
+}
+
 .new_event_container {
     height: 65%;
     border: ridge 3px red;
