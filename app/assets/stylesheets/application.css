@@ -191,7 +191,7 @@ h3 {
 
 .fade_in_content {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     animation-duration: 2s;
     animation-name: fadein;
     background-color: #9dbeb7;
@@ -229,7 +229,7 @@ h3 {
 
 
 .main_container {
-    min-height: 100%;    
+    min-height: 87.5%;    
     background-color: #9dbeb7;
     color: black;
     border: thick;
