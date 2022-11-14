@@ -1,7 +1,10 @@
-
-<%= render "static_files/top_nav" %>
+<div class="default_layout">
+  <%= render "static_files/bottom_nav" %>
+    <div>
+      <%= render "static_files/top_nav" %>
 <div class="main_body_container">
   <div class="registration_display">
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -40,4 +43,3 @@
 </div>
 </div>
 
-<%= render "static_files/bottom_nav" %>
