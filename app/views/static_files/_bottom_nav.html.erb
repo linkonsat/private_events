@@ -29,6 +29,13 @@
               <%= link_to "View registered events", url = '/events/attended_events' %>
             <% end %>
           </div>
+          <div class="panel_link">
+            <% if current_user.nil? %>
+              <%= link_to "Create event", url = '/users/sign_in' %>
+            <% else %>
+              <%= link_to "Create event", url = '/events/new' %>
+            <% end %>
+          </div>
         </div>
       </div>
           <div class="media_links"> 
