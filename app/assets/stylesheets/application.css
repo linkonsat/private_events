@@ -336,6 +336,7 @@ h3 {
     height: 10%;
     display: flex;
     justify-content: center;
+    margin-top: 15px;
 }
 
 .top_nav_bar {
@@ -368,11 +369,31 @@ h3 {
        width: 80%;
     }
 
+    .default_layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main_body_container {
+        height: 100%;
+    }
+
+    .media_links {
+        margin-top: 5px;
+    }
     .new_event_container {
         height: auto;
         border: ridge 3px red;
         box-shadow: 5px 3px 3px black;   
       }
+    
+    .side_panel_alignment {
+        justify-content: space-evenly;
+    }
+    .title {
+        margin-top: 0px;
+    }
+
  }
 
 @keyframes slidein {
