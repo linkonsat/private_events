@@ -232,6 +232,7 @@ h3 {
     color: black;
     border: thick;
     border-color: blue;
+    padding-top: 5px;
 }
 
 .main_body_container {
@@ -336,7 +337,7 @@ h3 {
     height: 10%;
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 10%;
 }
 
 .top_nav_bar {
