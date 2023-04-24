@@ -10,91 +10,97 @@ Featured Events
   
 </div>
 <div class="main_home_container">
-  <% if @future_events.empty? %>
-    <p>
-      No future events found! Why not start a party and create your own! <%= link_to "create new event", url = "events/new" %> 
-    </p>
-  <% else %>
-    <% @future_events.each do |event| %>
-      <div class="event_box">
-        <% if event.event_option.private == false %>
-          <div class="all_events_container">
-            <div>
-              <div class="event_title_name">
-                Public
+      <% if @future_events.empty? %>
+        <% if current_user == nil %>
+          <p> 
+            No future events found! Why not start a party and create your own! <%= link_to "Just sign in first!", url = "users/sign_up" %> 
+          </p>
+        <% else %>
+          <p>
+            No future events found! Why not start a party and create your own! <%= link_to "create new event", url = "events/new" %> 
+          </p>
+        <% end %>
+      <% else %>
+      <% @future_events.each do |event| %>
+        <div class="event_box">
+          <% if event.event_option.private == false %>
+            <div class="all_events_container">
+              <div>
+                <div class="event_title_name">
+                  Public
+                </div>
+                <div>
+                  <%= event.name %>
+                </div>
               </div>
               <div>
-                <%= event.name %>
+                <div>
+                  Starts time
+                </div>
+                <div> 
+                  <%= event.event_date.to_datetime.strftime('%m-%d-%y') %>
+                </div>
+                <div>
+                  <%= event.event_date.to_datetime.strftime('%r') %>
+                </div>
               </div>
-            </div>
-            <div>
-              <div>
-                Starts time
-              </div>
-              <div> 
-                <%= event.event_date.to_datetime.strftime('%m-%d-%y') %>
-              </div>
-              <div>
-                <%= event.event_date.to_datetime.strftime('%r') %>
-              </div>
-            </div>
-    <% if current_user.nil? %>
-      <div>
-        Log in to sign up!
-      </div>
-    <% else %>
-      <% if event.attendees.where("email = ?", current_user.email).empty? %>
+      <% if current_user.nil? %>
         <div>
-          <%= button_to "Sign Up", new_event_attendee_path, params: { attendee_id: current_user, event_id: event.id } %>
+          Log in to sign up!
+        </div>
+      <% else %>
+        <% if event.attendees.where("email = ?", current_user.email).empty? %>
+          <div>
+            <%= button_to "Sign Up", new_event_attendee_path, params: { attendee_id: current_user, event_id: event.id } %>
+          </div>
+        <% else %>
+          <div>
+            You already signed up!
+          </div>
+        <% end %>
+      <% end %>
+      <div data-controller="drop-down">
+        <div data-action="click->drop-down#reveal" class="description_button">
+          Description ⬇
+        <div class="description">
+          <%= event.description %>
+        </div>
+        </div>
+      </div>
+
+      <% else %>
+      <div class="all_events_container">
+      <div>
+        Private event: <%= event.name %>
+      </div>
+      <div>
+        Starts at <%= event.event_date.to_datetime.strftime('%y-%m-%d-%r') %>
+      </div>
+      <div>
+        Ends at <%= event.event_end_date.to_datetime.strftime('%y-%m-%d-%r') %>
+      </div>
+      <% if current_user.nil? %>]
+        <div>
+          Log in to sign up!
         </div>
       <% else %>
         <div>
-          You already signed up!
+          Not currently accepting sign ups!
         </div>
       <% end %>
-    <% end %>
-    <div data-controller="drop-down">
-      <div data-action="click->drop-down#reveal" class="description_button">
-        Description ⬇
-      <div class="description">
-        <%= event.description %>
+      <div data-controller="drop-down" data-action="click->drop-down#reveal">
+        <div data-action="click->drop-down#reveal" class="description_button">
+          Description ⬇
+        <div class="description">
+          <%= event.description %>
+        </div>
+        </div>
       </div>
       </div>
-    </div>
-
-    <% else %>
-    <div class="all_events_container">
-    <div>
-      Private event: <%= event.name %>
-    </div>
-    <div>
-     Starts at <%= event.event_date.to_datetime.strftime('%y-%m-%d-%r') %>
-    </div>
-    <div>
-      Ends at <%= event.event_end_date.to_datetime.strftime('%y-%m-%d-%r') %>
-    </div>
-    <% if current_user.nil? %>]
-      <div>
-        Log in to sign up!
-      </div>
-    <% else %>
-      <div>
-        Not currently accepting sign ups!
-      </div>
-    <% end %>
-    <div data-controller="drop-down" data-action="click->drop-down#reveal">
-      <div data-action="click->drop-down#reveal" class="description_button">
-        Description ⬇
-      <div class="description">
-        <%= event.description %>
+      <% end %>
       </div>
       </div>
-    </div>
-    </div>
-    <% end %>
-    </div>
-    </div>
-    <% end %>
+      <% end %>
 <% end %>
 </div>
 </div>
