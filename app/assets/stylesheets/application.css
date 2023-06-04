@@ -154,7 +154,6 @@ h3 {
 
 .event_choice {
     margin-top: 10px;
-    padding: 5px;
 }
 
 .event_description {
@@ -334,17 +333,18 @@ h3 {
 
 .title {
     font-style: italic;
-    height: 10%;
+    height: 140%;
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    background-color: white;
+    align-items: center;
 }
 
 .top_nav_bar {
     display: flex;
     justify-content: space-evenly;
     height: 12.5%;
-    background-color: #FF7276;
+    background-color: white;
     color: black;
     align-items: center;
  }
