@@ -224,6 +224,9 @@ h3 {
     box-shadow:5px 3px 3px black;
 }
 
+.login_text_box {
+    height: 20px;
+}
 
 .main_container {
     min-height: 87.5%;    

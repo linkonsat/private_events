@@ -11,12 +11,12 @@
   
   <div class="event_choice">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "login_text_box" %>
   </div>
 
   <div class="event_choice">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+      <%= f.password_field :password, autocomplete: "current-password", class: "login_text_box" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
