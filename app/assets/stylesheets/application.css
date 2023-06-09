@@ -154,6 +154,7 @@ h3 {
 
 .event_choice {
     margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .event_description {
@@ -226,6 +227,7 @@ h3 {
 
 .login_text_box {
     height: 20px;
+    border-radius: 10px;
 }
 
 .main_container {
@@ -341,6 +343,9 @@ h3 {
     justify-content: center;
     background-color: white;
     align-items: center;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    border-bottom-color: red;
 }
 
 .top_nav_bar {
@@ -350,6 +355,9 @@ h3 {
     background-color: white;
     color: black;
     align-items: center;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    border-bottom-color: red;
  }
 
  .user_edit {
